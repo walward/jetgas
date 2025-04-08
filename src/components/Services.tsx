@@ -2,6 +2,7 @@
 import React from "react";
 import { Flame, Wrench, ShieldCheck, Settings, Fan, ThermometerSnowflake } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Services = () => {
   const services = [
@@ -44,11 +45,32 @@ const Services = () => {
   ];
 
   const brands = [
-    "Rinnai", "Komeco", "Inova", "Heliotek", "Bosch", "Harman", 
-    "Yume", "Lorenzetti", "Rheem", "Sakura", "Cumulus", "Nordik", 
-    "Junkers", "Equibrás", "Kent", "Thermotini", "Chama", "Orbis", 
-    "General Heater", "Rowa", "Cosmopolita"
+    {name: "Rinnai", logo: "/lovable-uploads/061254c6-8865-4bc2-b722-35f507b1f455.png"},
+    {name: "Bosch", logo: "/lovable-uploads/5965c3ba-7287-484f-a13d-e11c02bee785.png"},
+    {name: "Chama", logo: "/lovable-uploads/a0ae8602-1e07-4a6e-8fb8-872a4dbdf928.png"},
+    {name: "Cosmopolita", logo: "/lovable-uploads/3b9e7037-08d2-43ad-98a6-e2c267c81ac8.png"},
+    {name: "Cumulus", logo: "/lovable-uploads/1ab11a58-3da9-4d40-9bba-67de7670d75c.png"},
+    {name: "Equibrás", logo: "/lovable-uploads/cfb5934a-baf7-44c7-bd6a-a61c23ec5317.png"},
+    {name: "General Heater", logo: "/lovable-uploads/75699ea2-9a73-41d4-9bd5-98d40c85304f.png"},
+    {name: "Harman", logo: "/lovable-uploads/72a94254-5899-4852-96a6-49c5297ac1d6.png"},
+    {name: "Heliotek", logo: "/lovable-uploads/07804fa2-a3c4-4afa-8e30-0d1257054e8f.png"},
+    {name: "Inova", logo: "/lovable-uploads/fe2c375d-66c1-49e4-926e-03917769e4c0.png"},
+    {name: "Junkers", logo: "/lovable-uploads/0a90c52f-cdc2-4875-b04a-18ba3eb9221f.png"},
+    {name: "Kent", logo: "/lovable-uploads/dc4920ce-76a9-4575-83f0-99222ec21ddd.png"},
+    {name: "Komeco", logo: "/lovable-uploads/0fa806b9-9b40-4faf-903f-a648c9536f8f.png"},
+    {name: "Lorenzetti", logo: "/lovable-uploads/a7f517dc-9965-4100-b19f-17635db50adb.png"},
+    {name: "Nordik", logo: "/lovable-uploads/3a6547b8-fad1-4f4e-bb7f-66ed666e5170.png"},
+    {name: "Orbis", logo: "/lovable-uploads/c6c5cb1e-8a21-4a83-b15e-436a8e38b8c6.png"},
+    {name: "Rheem", logo: "/lovable-uploads/f8d50a30-8de6-4d12-a1a8-6824a903d549.png"},
+    {name: "Sakura", logo: "/lovable-uploads/cad5431e-25c1-4f0b-8aa7-6e15b602d113.png"},
+    {name: "Thermotini", logo: "/lovable-uploads/e88748bf-8f26-431b-a591-1b87b072afeb.png"},
+    {name: "Yume", logo: "/lovable-uploads/c03ffcdb-57d8-41a5-bf5a-5314a4984fcf.png"}
   ];
+
+  // Plugin para autoplay do carrossel
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: false })
+  );
 
   return (
     <section id="servicos" className="section-padding bg-accent">
@@ -111,13 +133,20 @@ const Services = () => {
                 loop: true,
                 dragFree: true,
               }}
+              plugins={[plugin.current]}
               className="w-full"
+              onMouseEnter={plugin.current.stop}
+              onMouseLeave={plugin.current.reset}
             >
               <CarouselContent className="py-4">
                 {brands.map((brand, index) => (
                   <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/6">
                     <div className="p-4 bg-white rounded-lg shadow-sm h-24 flex items-center justify-center">
-                      <div className="text-primary font-bold text-center">{brand}</div>
+                      <img 
+                        src={brand.logo} 
+                        alt={`${brand.name} logo`} 
+                        className="max-h-20 max-w-full object-contain" 
+                      />
                     </div>
                   </CarouselItem>
                 ))}

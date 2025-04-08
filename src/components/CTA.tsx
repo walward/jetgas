@@ -1,8 +1,42 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { AlertCircle, ArrowRight } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const CTA = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    nome: "",
+    telefone: "",
+    problema: ""
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Prepare WhatsApp message with form data
+    const message = `EMERGÊNCIA: Olá, meu nome é ${formData.nome}. Estou com o seguinte problema: ${formData.problema}. Meu telefone é ${formData.telefone}.`;
+    
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Open WhatsApp with the pre-filled message
+    window.open(`https://wa.me/5511978025373?text=${encodedMessage}`, "_blank");
+
+    toast({
+      title: "Solicitação enviada!",
+      description: "Entraremos em contato o mais breve possível.",
+    });
+
+    // Reset form
+    setFormData({ nome: "", telefone: "", problema: "" });
+  };
+
   return (
     <section id="atendimento" className="section-padding bg-secondary">
       <div className="container mx-auto px-4">
@@ -26,7 +60,7 @@ const CTA = () => {
 
             <div className="flex gap-4">
               <a
-                href="https://wa.me/5511978025373?text=EMERGÊNCIA:%20Preciso%20de%20assistência%20urgente%20com%20meu%20aquecedor"
+                href="https://wa.me/5511978025373?text=Atendimento%20emergencial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary bg-white text-secondary hover:bg-gray-100 flex items-center justify-center gap-2"
@@ -46,25 +80,37 @@ const CTA = () => {
                 Preencha o formulário para atendimento prioritário
               </p>
 
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <input
                     type="text"
+                    name="nome"
                     placeholder="Nome"
+                    value={formData.nome}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
                 <div>
                   <input
                     type="tel"
+                    name="telefone"
                     placeholder="Telefone / WhatsApp"
+                    value={formData.telefone}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
                 <div>
                   <textarea
                     placeholder="Descreva seu problema"
+                    name="problema"
+                    value={formData.problema}
+                    onChange={handleChange}
                     rows={3}
+                    required
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                   ></textarea>
                 </div>
