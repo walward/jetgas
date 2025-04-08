@@ -44,7 +44,7 @@ const Testimonials = () => {
   ];
 
   const averageRating = 4.8;
-  const totalReviews = reviews.length;
+  const totalReviews = 124; // Updated to show 124 reviews
 
   const renderStars = (rating: number) => {
     return Array(5)
@@ -58,6 +58,8 @@ const Testimonials = () => {
         />
       ));
   };
+
+  const googleReviewsUrl = "https://www.google.com/search?sca_esv=540de929b15f835b&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzYiPzx8gAwHPWCQefAmBY0Sy_JSU1qT3F4pv9JXQSYl9LZQ159ineDAbmZRgqPkPbXdQP9-yDy1gxCC8ER4eB400xrL2IIl9d4HDS1en1Bg_ZcDmPA%3D%3D&q=JetG%C3%A1s+Aquecedores+Coment%C3%A1rios&sa=X&ved=2ahUKEwjBqOrQu8mMAxVaOrkGHfFZOBYQ0bkNegQILBAE&biw=1396&bih=663&dpr=1.38";
 
   return (
     <section id="depoimentos" className="section-padding bg-white">
@@ -85,7 +87,9 @@ const Testimonials = () => {
               <span className="ml-2 text-lg font-semibold">{averageRating.toFixed(1)}/5</span>
             </div>
             <span className="mx-4 text-gray-400">|</span>
-            <span className="text-lg font-semibold">{totalReviews} avaliações</span>
+            <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="text-lg font-semibold hover:underline text-primary transition-colors">
+              {totalReviews} avaliações
+            </a>
           </div>
         </div>
 

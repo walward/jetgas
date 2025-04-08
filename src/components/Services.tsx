@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Flame, Wrench, ShieldCheck, Settings, Fan, ThermometerSnowflake, ChevronLeft, ChevronRight } from "lucide-react";
 import { 
@@ -83,7 +84,7 @@ const Services = () => {
     <section id="servicos" className="section-padding bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-title uppercase">Nossos Serviços</h2>
+          <h2 className="section-title uppercase">NOSSOS SERVIÇOS</h2>
           <p className="section-subtitle">
             Oferecemos soluções completas para manutenção e reparo de aquecedores a gás
           </p>
@@ -106,10 +107,10 @@ const Services = () => {
 
         <div className="mt-20">
           <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold text-primary mb-4 uppercase">
-              Trabalhamos com todas as marcas
+            <h3 className="section-title uppercase mb-4">
+              TRABALHAMOS COM AS PRINCIPAIS MARCAS
             </h3>
-            <p className="text-muted max-w-3xl mx-auto">
+            <p className="section-subtitle">
               Nossa equipe é especializada no reparo e manutenção das principais
               marcas de aquecedores do mercado
             </p>
@@ -136,7 +137,7 @@ const Services = () => {
                     <img
                       src={brand.logo}
                       alt={`Logo ${brand.name}`}
-                      className="h-16 object-contain grayscale hover:grayscale-0 transition-all mx-auto"
+                      className="h-16 w-auto object-contain max-w-full grayscale hover:grayscale-0 transition-all mx-auto"
                     />
                   </CarouselItem>
                 ))}

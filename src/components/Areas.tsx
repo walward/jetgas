@@ -34,7 +34,7 @@ const Areas = () => {
     <section className="section-padding bg-accent">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-title">Áreas de Atendimento</h2>
+          <h2 className="section-title uppercase">ÁREAS DE ATENDIMENTO</h2>
           <p className="section-subtitle">
             Atuamos em São Paulo capital e Grande São Paulo com atendimento rápido
           </p>
@@ -69,7 +69,7 @@ const Areas = () => {
             Não encontrou sua região? Entre em contato para verificar disponibilidade
           </p>
           <a
-            href="https://wa.me/5511978025373?text=Olá,%20gostaria%20de%20verificar%20se%20vocês%20atendem%20minha%20região"
+            href="https://wa.me/5511978025373?text=Olá,%20estou%20precisando%20de%20assistência%20técnica%20para%20meu%20aquecedor.%20Pode%20me%20ajudar?"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-flex items-center"

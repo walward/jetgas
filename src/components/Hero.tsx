@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
@@ -42,17 +43,17 @@ const Hero = () => {
                 Manutenção de aquecedores há mais de 20 anos
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 uppercase">
               MANUTENÇÃO DE AQUECEDORES COM{" "}
               <span className="text-secondary">SEGURANÇA E QUALIDADE</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-lg">
-              Especialistas em manutenção, instalação e conserto de aquecedores de todas as marcas com atendimento rápido e eficiente.
+              Especialistas em manutenção, instalação e conserto de aquecedores das principais marcas com atendimento rápido e eficiente.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://wa.me/5511978025373?text=Olá,%20gostaria%20de%20um%20atendimento"
+                href="https://wa.me/5511978025373?text=Olá,%20estou%20precisando%20de%20assistência%20técnica%20para%20meu%20aquecedor.%20Pode%20me%20ajudar?"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary flex items-center justify-center gap-2 text-lg"
@@ -68,7 +69,7 @@ const Hero = () => {
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex items-center">
                 <CheckCircle className="h-6 w-6 text-secondary mr-2" />
-                <span className="text-white font-medium">Atendimento 24h</span>
+                <span className="text-white font-medium">Assistência técnica especializada</span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-6 w-6 text-secondary mr-2" />
@@ -91,7 +92,7 @@ const Hero = () => {
                 Precisando de assistência técnica?
               </h3>
               <p className="text-muted mb-6">
-                Preencha o formulário abaixo e receba atendimento prioritário
+                Preencha o formulário abaixo e receba atendimento emergencial
               </p>
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
@@ -142,7 +143,7 @@ const Hero = () => {
                 </button>
               </form>
               <p className="text-xs text-muted mt-4 text-center">
-                Responderemos em até 2 horas durante horário comercial
+                Atendimento emergencial fora de horário comercial!
               </p>
             </div>
 
