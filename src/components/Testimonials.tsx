@@ -2,6 +2,24 @@
 import React, { useState, useEffect } from "react";
 import { Star } from "lucide-react";
 
+// Declaração de tipos para a API do Google Maps
+declare global {
+  interface Window {
+    google?: {
+      maps: {
+        Map: any;
+        places: {
+          PlacesService: any;
+          PlacesServiceStatus: {
+            OK: string;
+            // ... outros status
+          };
+        };
+      };
+    };
+  }
+}
+
 interface Review {
   name: string;
   location: string;
@@ -70,26 +88,29 @@ const Testimonials = () => {
   ];
 
   useEffect(() => {
-    // Tentar obter reviews do Google
-    const fetchGoogleReviews = async () => {
+    // Função para buscar as avaliações do Google
+    const fetchGoogleReviews = () => {
       try {
-        // Verificar se a API do Google Maps está disponível
         if (window.google && window.google.maps && window.google.maps.places) {
-          const map = new google.maps.Map(document.createElement("div"));
-          const service = new google.maps.places.PlacesService(map);
+          console.log("API do Google Maps disponível, buscando avaliações...");
           
-          // ID do local da JetGas no Google (exemplo)
-          // Este precisa ser o ID real da empresa no Google
-          const placeId = "ChIJRW6Z1VtPzpQRg-ZnhmIs3l0"; // Exemplo - substitua pelo ID real
+          // Criar um elemento div temporário para o serviço do Places
+          const mapDiv = document.createElement("div");
+          const map = new window.google.maps.Map(mapDiv);
+          const service = new window.google.maps.places.PlacesService(map);
+          
+          // ID do local da JetGas no Google
+          // Este é um ID de exemplo, substitua pelo ID real da empresa
+          const placeId = "ChIJRW6Z1VtPzpQRg-ZnhmIs3l0";
           
           service.getDetails(
             {
               placeId: placeId,
               fields: ["reviews", "rating", "user_ratings_total"],
             },
-            (place, status) => {
+            (place: any, status: any) => {
               if (
-                status === google.maps.places.PlacesServiceStatus.OK &&
+                status === window.google.maps.places.PlacesServiceStatus.OK &&
                 place &&
                 place.reviews
               ) {
@@ -148,12 +169,22 @@ const Testimonials = () => {
       }
     };
 
-    // Esperar um pouco para ter certeza que o script do Google foi carregado
-    const timer = setTimeout(() => {
+    // Verificar se o Google Maps já está carregado
+    if (window.google && window.google.maps) {
       fetchGoogleReviews();
-    }, 1500);
-
-    return () => clearTimeout(timer);
+    } else {
+      // Se não estiver carregado, espere pelo evento que indica que foi carregado
+      const handleGoogleMapsLoaded = () => {
+        fetchGoogleReviews();
+      };
+      
+      window.addEventListener('google-maps-loaded', handleGoogleMapsLoaded);
+      
+      // Limpar o event listener quando o componente for desmontado
+      return () => {
+        window.removeEventListener('google-maps-loaded', handleGoogleMapsLoaded);
+      };
+    }
   }, []);
 
   const renderStars = (rating: number) => {
