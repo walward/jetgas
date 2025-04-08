@@ -24,27 +24,43 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // You would typically use a backend service or API endpoint to send emails
-      // For now, we'll simulate the email sending with a timeout
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Reset form after submission
-      setFormData({
-        nome: "",
-        email: "",
-        telefone: "",
-        assunto: "",
-        mensagem: ""
-      });
+      // Prepare message for WhatsApp
+      const assuntoText = formData.assunto === "orcamento" ? "orçamento" :
+                         formData.assunto === "manutencao" ? "manutenção" :
+                         formData.assunto === "duvida" ? "dúvidas" :
+                         "assistência";
 
+      const message = `Olá, meu nome é ${formData.nome}. 
+Estou entrando em contato para ${assuntoText}. 
+Telefone: ${formData.telefone}
+Email: ${formData.email}
+Mensagem: ${formData.mensagem}`;
+      
+      // Encode the message for URL
+      const encodedMessage = encodeURIComponent(message);
+      
       toast({
-        title: "Mensagem enviada!",
-        description: "Entraremos em contato em breve.",
+        title: "Redirecionando para WhatsApp",
+        description: "Vamos te conectar com nossa equipe de atendimento.",
         variant: "default",
       });
+      
+      // Brief delay before opening WhatsApp
+      setTimeout(() => {
+        window.open(`https://wa.me/5511978025373?text=${encodedMessage}`, "_blank");
+        
+        // Reset form after submission
+        setFormData({
+          nome: "",
+          email: "",
+          telefone: "",
+          assunto: "",
+          mensagem: ""
+        });
+      }, 1000);
     } catch (error) {
       toast({
-        title: "Erro ao enviar mensagem",
+        title: "Erro ao processar",
         description: "Tente novamente mais tarde ou entre em contato por telefone.",
         variant: "destructive",
       });

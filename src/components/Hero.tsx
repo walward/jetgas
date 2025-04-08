@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
 const Hero = () => {
+  const defaultMessage = "Olá, estou precisando de assistência técnica para meu aquecedor. Pode me ajudar?";
+  const encodedMessage = encodeURIComponent(defaultMessage);
+
   const [formData, setFormData] = useState({
     nome: "",
     telefone: "",
@@ -53,7 +56,7 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://wa.me/5511978025373?text=Olá,%20estou%20precisando%20de%20assistência%20técnica%20para%20meu%20aquecedor.%20Pode%20me%20ajudar?"
+                href={`https://wa.me/5511978025373?text=${encodedMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary flex items-center justify-center gap-2 text-lg"

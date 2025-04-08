@@ -5,6 +5,9 @@ import { Menu, X, Phone } from "lucide-react";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  const defaultMessage = "Olá, estou precisando de assistência técnica para meu aquecedor. Pode me ajudar?";
+  const encodedMessage = encodeURIComponent(defaultMessage);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,7 +85,9 @@ const Header = () => {
               </span>
             </div>
             <a
-              href="#atendimento"
+              href={`https://wa.me/5511978025373?text=${encodedMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-secondary"
             >
               Atendimento
@@ -144,7 +149,9 @@ const Header = () => {
               </span>
             </div>
             <a
-              href="#atendimento"
+              href={`https://wa.me/5511978025373?text=${encodedMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-secondary inline-block mt-2"
               onClick={toggleMenu}
             >
