@@ -31,9 +31,9 @@ const Header = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img 
-                src={isScrolled ? "/lovable-uploads/d297a5fd-8b13-45c5-a790-e1bc25a708e5.png" : "/lovable-uploads/782c431b-82c0-45ce-b106-2a939d6480b6.png"} 
+                src={isScrolled ? "/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png" : "/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png"} 
                 alt="JetGas Logo" 
-                className={`h-12 mr-2`} 
+                className={`h-12 mr-2 ${isScrolled ? "" : "brightness-0 invert"}`} 
               />
             </a>
           </div>
