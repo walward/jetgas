@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 
@@ -33,7 +32,7 @@ const Header = () => {
               <img 
                 src={isScrolled ? "/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png" : "/lovable-uploads/9f85ef48-4eac-4004-ac16-dfd9eba6c3f6.png"} 
                 alt="JetGas Logo" 
-                className={`h-12 mr-2 ${isScrolled ? "" : ""}`} 
+                className="h-12 mr-2" 
               />
             </a>
           </div>
