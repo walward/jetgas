@@ -92,7 +92,7 @@ const Benefits = () => {
                 <li className="flex items-start">
                   <span className="text-secondary mr-2">✓</span>
                   <span className="text-white/80">
-                    Satisfação garantida ou seu dinheiro de volta
+                    Satisfação garantida por um equipe especializada
                   </span>
                 </li>
               </ul>
