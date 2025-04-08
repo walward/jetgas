@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+        isScrolled ? "bg-white shadow-md py-2" : "bg-primary py-4"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -31,9 +31,9 @@ const Header = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png" 
+                src={isScrolled ? "/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png" : "/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png"} 
                 alt="JetGas Logo" 
-                className="h-12 mr-2" 
+                className="h-12 mr-2 brightness-0 invert" 
               />
             </a>
           </div>
@@ -42,31 +42,31 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <a
               href="#inicio"
-              className="text-primary hover:text-primary-light font-medium transition-colors"
+              className={`${isScrolled ? "text-primary" : "text-white"} hover:text-secondary font-medium transition-colors`}
             >
               Início
             </a>
             <a
               href="#servicos"
-              className="text-primary hover:text-primary-light font-medium transition-colors"
+              className={`${isScrolled ? "text-primary" : "text-white"} hover:text-secondary font-medium transition-colors`}
             >
               Serviços
             </a>
             <a
               href="#sobre"
-              className="text-primary hover:text-primary-light font-medium transition-colors"
+              className={`${isScrolled ? "text-primary" : "text-white"} hover:text-secondary font-medium transition-colors`}
             >
               Sobre Nós
             </a>
             <a
               href="#depoimentos"
-              className="text-primary hover:text-primary-light font-medium transition-colors"
+              className={`${isScrolled ? "text-primary" : "text-white"} hover:text-secondary font-medium transition-colors`}
             >
               Depoimentos
             </a>
             <a
               href="#contato"
-              className="text-primary hover:text-primary-light font-medium transition-colors"
+              className={`${isScrolled ? "text-primary" : "text-white"} hover:text-secondary font-medium transition-colors`}
             >
               Contato
             </a>
@@ -74,8 +74,8 @@ const Header = () => {
 
           <div className="hidden md:flex items-center space-x-4">
             <div className="flex items-center">
-              <Phone className="h-5 w-5 text-secondary mr-2" />
-              <span className="font-semibold text-primary">
+              <Phone className={`h-5 w-5 ${isScrolled ? "text-secondary" : "text-white"} mr-2`} />
+              <span className={`font-semibold ${isScrolled ? "text-primary" : "text-white"}`}>
                 (11) 3461-8215
               </span>
             </div>
@@ -90,9 +90,9 @@ const Header = () => {
           {/* Mobile menu button */}
           <button className="md:hidden" onClick={toggleMenu}>
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-primary" />
+              <X className={`h-6 w-6 ${isScrolled ? "text-primary" : "text-white"}`} />
             ) : (
-              <Menu className="h-6 w-6 text-primary" />
+              <Menu className={`h-6 w-6 ${isScrolled ? "text-primary" : "text-white"}`} />
             )}
           </button>
         </div>
@@ -102,42 +102,42 @@ const Header = () => {
           <nav className="md:hidden pt-4 pb-4 space-y-4">
             <a
               href="#inicio"
-              className="block text-primary hover:text-primary-light font-medium transition-colors py-2"
+              className={`block ${isScrolled ? "text-primary" : "text-white"} hover:text-secondary font-medium transition-colors py-2`}
               onClick={toggleMenu}
             >
               Início
             </a>
             <a
               href="#servicos"
-              className="block text-primary hover:text-primary-light font-medium transition-colors py-2"
+              className={`block ${isScrolled ? "text-primary" : "text-white"} hover:text-secondary font-medium transition-colors py-2`}
               onClick={toggleMenu}
             >
               Serviços
             </a>
             <a
               href="#sobre"
-              className="block text-primary hover:text-primary-light font-medium transition-colors py-2"
+              className={`block ${isScrolled ? "text-primary" : "text-white"} hover:text-secondary font-medium transition-colors py-2`}
               onClick={toggleMenu}
             >
               Sobre Nós
             </a>
             <a
               href="#depoimentos"
-              className="block text-primary hover:text-primary-light font-medium transition-colors py-2"
+              className={`block ${isScrolled ? "text-primary" : "text-white"} hover:text-secondary font-medium transition-colors py-2`}
               onClick={toggleMenu}
             >
               Depoimentos
             </a>
             <a
               href="#contato"
-              className="block text-primary hover:text-primary-light font-medium transition-colors py-2"
+              className={`block ${isScrolled ? "text-primary" : "text-white"} hover:text-secondary font-medium transition-colors py-2`}
               onClick={toggleMenu}
             >
               Contato
             </a>
             <div className="flex items-center pt-2">
-              <Phone className="h-5 w-5 text-secondary mr-2" />
-              <span className="font-semibold text-primary">
+              <Phone className={`h-5 w-5 ${isScrolled ? "text-secondary" : "text-white"} mr-2`} />
+              <span className={`font-semibold ${isScrolled ? "text-primary" : "text-white"}`}>
                 (11) 3461-8215
               </span>
             </div>

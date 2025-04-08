@@ -40,7 +40,7 @@ const CTA = () => {
           <div className="md:w-5/12 bg-white rounded-xl shadow-custom overflow-hidden">
             <div className="p-8">
               <h3 className="text-2xl font-bold text-primary mb-2">
-                Plantão 24h
+                Atendimento Prioritário
               </h3>
               <p className="text-muted mb-6">
                 Preencha o formulário para atendimento prioritário
@@ -79,7 +79,7 @@ const CTA = () => {
             </div>
             <div className="bg-primary px-8 py-4">
               <p className="text-white text-center font-medium">
-                Atendimento prioritário em até 2 horas*
+                Atendimento prioritário em horário comercial
               </p>
             </div>
           </div>

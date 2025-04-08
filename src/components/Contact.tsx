@@ -1,8 +1,58 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    nome: "",
+    email: "",
+    telefone: "",
+    assunto: "",
+    mensagem: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // You would typically use a backend service or API endpoint to send emails
+      // For now, we'll simulate the email sending with a timeout
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Reset form after submission
+      setFormData({
+        nome: "",
+        email: "",
+        telefone: "",
+        assunto: "",
+        mensagem: ""
+      });
+
+      toast({
+        title: "Mensagem enviada!",
+        description: "Entraremos em contato em breve.",
+        variant: "default",
+      });
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Tente novamente mais tarde ou entre em contato por telefone.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contato" className="section-padding bg-white">
       <div className="container mx-auto px-4">
@@ -54,9 +104,6 @@ const Contact = () => {
                     <p className="text-muted">
                       Sábados: 8h às 12h
                     </p>
-                    <p className="text-muted font-medium">
-                      Plantão 24h para emergências
-                    </p>
                   </div>
                 </div>
 
@@ -84,15 +131,19 @@ const Contact = () => {
                 Envie uma Mensagem
               </h3>
 
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Nome Completo
                   </label>
                   <input
                     type="text"
+                    name="nome"
+                    value={formData.nome}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="Digite seu nome"
+                    required
                   />
                 </div>
 
@@ -103,8 +154,12 @@ const Contact = () => {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="Digite seu email"
+                      required
                     />
                   </div>
                   <div>
@@ -113,8 +168,12 @@ const Contact = () => {
                     </label>
                     <input
                       type="tel"
+                      name="telefone"
+                      value={formData.telefone}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="(00) 00000-0000"
+                      required
                     />
                   </div>
                 </div>
@@ -123,13 +182,18 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Assunto
                   </label>
-                  <select className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary appearance-none bg-white">
-                    <option value="" disabled selected>
+                  <select 
+                    name="assunto"
+                    value={formData.assunto}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary appearance-none bg-white"
+                    required
+                  >
+                    <option value="" disabled>
                       Selecione o assunto
                     </option>
                     <option value="orcamento">Solicitar Orçamento</option>
                     <option value="manutencao">Manutenção</option>
-                    <option value="emergencia">Atendimento de Emergência</option>
                     <option value="duvida">Dúvidas</option>
                     <option value="outro">Outro Assunto</option>
                   </select>
@@ -141,16 +205,21 @@ const Contact = () => {
                   </label>
                   <textarea
                     rows={4}
+                    name="mensagem"
+                    value={formData.mensagem}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                     placeholder="Digite sua mensagem..."
+                    required
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
                   className="btn-secondary w-full"
+                  disabled={isSubmitting}
                 >
-                  Enviar Mensagem
+                  {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
                 </button>
               </form>
             </div>
