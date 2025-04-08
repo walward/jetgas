@@ -29,8 +29,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-primary">
-              JetGas
+            <a href="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png" 
+                alt="JetGas Logo" 
+                className="h-12 mr-2" 
+              />
             </a>
           </div>
 

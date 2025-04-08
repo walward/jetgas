@@ -8,7 +8,13 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-6">JetGas</h3>
+            <div className="bg-white inline-block p-2 rounded-lg mb-4">
+              <img 
+                src="/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png" 
+                alt="JetGas Logo" 
+                className="h-12" 
+              />
+            </div>
             <p className="text-white/80 mb-6">
               Mais de 20 anos de experiência em manutenção de aquecedores, oferecendo serviços de qualidade com segurança e garantia.
             </p>
