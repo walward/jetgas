@@ -60,7 +60,7 @@ const CTA = () => {
 
             <div className="flex gap-4">
               <div
-                className="btn-secondary bg-white text-secondary flex items-center justify-center gap-2 transform-none hover:transform-none hover:shadow-none"
+                className="bg-white text-secondary px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 cursor-default"
               >
                 <span>Atendimento Emergencial</span>
               </div>

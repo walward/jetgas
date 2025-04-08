@@ -12,17 +12,36 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
-  // Prevent horizontal scrolling on mobile
+  // Prevent horizontal scrolling on mobile with stronger approach
   useEffect(() => {
-    const handleTouchMove = (e: TouchEvent) => {
-      if (Math.abs(window.innerWidth - document.documentElement.clientWidth) > 0) {
+    // Apply styles directly to html and body elements
+    document.documentElement.style.overflow = 'hidden';
+    document.documentElement.style.height = '100%';
+    document.documentElement.style.width = '100%';
+    document.documentElement.style.position = 'relative';
+    
+    document.body.style.overflow = 'auto';
+    document.body.style.height = '100%';
+    document.body.style.width = '100%';
+    document.body.style.position = 'relative';
+    document.body.style.touchAction = 'pan-y';
+    document.body.style.msTouchAction = 'pan-y';
+    document.body.style.WebkitOverflowScrolling = 'touch';
+    
+    // Block horizontal touch moves
+    const handleTouchMove = (e) => {
+      if (Math.abs(e.touches[0].clientX - e.touches[0].startClientX) > 10) {
         e.preventDefault();
       }
     };
 
-    document.body.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    
     return () => {
-      document.body.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('touchmove', handleTouchMove);
+      // Reset styles
+      document.documentElement.style = '';
+      document.body.style = '';
     };
   }, []);
 

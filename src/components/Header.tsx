@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-primary py-4"
+        isScrolled ? "bg-white shadow-md py-2" : "bg-gradient-to-br from-primary to-primary-light py-4"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -31,9 +31,9 @@ const Header = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img 
-                src={isScrolled ? "/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png" : "/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png"} 
+                src={isScrolled ? "/lovable-uploads/d297a5fd-8b13-45c5-a790-e1bc25a708e5.png" : "/lovable-uploads/782c431b-82c0-45ce-b106-2a939d6480b6.png"} 
                 alt="JetGas Logo" 
-                className={`h-12 mr-2 ${isScrolled ? "" : "brightness-0 invert"}`} 
+                className={`h-12 mr-2`} 
               />
             </a>
           </div>
