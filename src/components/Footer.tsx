@@ -1,6 +1,7 @@
 
 import React from "react";
-import { Facebook, Instagram, Twitter, Youtube, ArrowRight } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -20,28 +21,20 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/jetgas"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/jetgasaquecedores"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
               >
                 <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
-              >
-                <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -54,7 +47,7 @@ const Footer = () => {
                   href="#inicio"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" />
+                  <span className="mr-2">→</span>
                   Início
                 </a>
               </li>
@@ -63,7 +56,7 @@ const Footer = () => {
                   href="#servicos"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" />
+                  <span className="mr-2">→</span>
                   Serviços
                 </a>
               </li>
@@ -72,7 +65,7 @@ const Footer = () => {
                   href="#sobre"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" />
+                  <span className="mr-2">→</span>
                   Sobre Nós
                 </a>
               </li>
@@ -81,7 +74,7 @@ const Footer = () => {
                   href="#depoimentos"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" />
+                  <span className="mr-2">→</span>
                   Depoimentos
                 </a>
               </li>
@@ -90,7 +83,7 @@ const Footer = () => {
                   href="#contato"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" />
+                  <span className="mr-2">→</span>
                   Contato
                 </a>
               </li>
@@ -105,7 +98,7 @@ const Footer = () => {
                   href="#servicos"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" />
+                  <span className="mr-2">→</span>
                   Manutenção Preventiva
                 </a>
               </li>
@@ -114,7 +107,7 @@ const Footer = () => {
                   href="#servicos"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" />
+                  <span className="mr-2">→</span>
                   Reparo de Aquecedores
                 </a>
               </li>
@@ -123,7 +116,7 @@ const Footer = () => {
                   href="#servicos"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" />
+                  <span className="mr-2">→</span>
                   Instalação de Aquecedores
                 </a>
               </li>
@@ -132,7 +125,7 @@ const Footer = () => {
                   href="#servicos"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" />
+                  <span className="mr-2">→</span>
                   Revisão de Segurança
                 </a>
               </li>
@@ -141,7 +134,7 @@ const Footer = () => {
                   href="#servicos"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
                 >
-                  <ArrowRight className="h-4 w-4 mr-2" />
+                  <span className="mr-2">→</span>
                   Troca de Peças
                 </a>
               </li>
@@ -152,16 +145,19 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6">Contato</h3>
             <ul className="space-y-3">
               <li className="text-white/80">
-                <strong className="text-white">Telefone:</strong> (11) 4444-5555
+                <strong className="text-white">Telefone:</strong> (11) 3461-8215
               </li>
               <li className="text-white/80">
-                <strong className="text-white">WhatsApp:</strong> (11) 98765-4321
+                <strong className="text-white">WhatsApp:</strong> (11) 97802-5373
               </li>
               <li className="text-white/80">
-                <strong className="text-white">Email:</strong> contato@jetgas.com.br
+                <strong className="text-white">Email:</strong> contatojetgasaquecedores@gmail.com
               </li>
               <li className="text-white/80">
-                <strong className="text-white">Endereço:</strong> Av. Paulista, 1000 - Bela Vista, São Paulo - SP
+                <strong className="text-white">Endereço:</strong> Av. Dória, 265 - Vila Alexandria, São Paulo - SP, CEP: 04635-070
+              </li>
+              <li className="text-white/80">
+                <strong className="text-white">CNPJ:</strong> 15.287.880.0001.04
               </li>
             </ul>
           </div>
@@ -174,12 +170,9 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0">
-            <a href="#" className="text-white/80 hover:text-white transition-colors">
+            <Link to="/politica-de-privacidade" className="text-white/80 hover:text-white transition-colors">
               Política de Privacidade
-            </a>
-            <a href="#" className="text-white/80 hover:text-white transition-colors">
-              Termos de Serviço
-            </a>
+            </Link>
           </div>
         </div>
       </div>

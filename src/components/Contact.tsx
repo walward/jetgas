@@ -38,8 +38,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-primary mb-1">Email</p>
-                    <p className="text-muted">contato@jetgas.com.br</p>
-                    <p className="text-muted">atendimento@jetgas.com.br</p>
+                    <p className="text-muted">contatojetgasaquecedores@gmail.com</p>
                   </div>
                 </div>
 
@@ -68,10 +67,10 @@ const Contact = () => {
                   <div>
                     <p className="font-semibold text-primary mb-1">Endereço</p>
                     <p className="text-muted">
-                      Av. Paulista, 1000 - Bela Vista
+                      Av. Dória, 265 - Vila Alexandria
                     </p>
                     <p className="text-muted">
-                      São Paulo - SP, 01310-100
+                      São Paulo - SP, CEP: 04635-070
                     </p>
                   </div>
                 </div>
