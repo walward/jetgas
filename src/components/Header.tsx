@@ -31,7 +31,9 @@ const Header = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img 
-                src={isScrolled ? "/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png" : "/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png"} 
+                src={isScrolled 
+                  ? "/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png" 
+                  : "/lovable-uploads/670d7939-8e99-4366-99be-ea3d5e30502b.png"} 
                 alt="JetGas Logo" 
                 className={`h-12 mr-2 ${isScrolled ? "" : "brightness-0 invert"}`} 
               />
