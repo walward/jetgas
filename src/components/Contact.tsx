@@ -57,7 +57,7 @@ const Contact = () => {
     <section id="contato" className="section-padding bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-title">Entre em Contato</h2>
+          <h2 className="section-title uppercase">Entre em Contato</h2>
           <p className="section-subtitle">
             Estamos prontos para atender você e resolver qualquer problema com seu aquecedor
           </p>

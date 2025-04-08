@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Star } from "lucide-react";
 
@@ -202,7 +203,7 @@ const Testimonials = () => {
     <section id="depoimentos" className="section-padding bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="section-title">O Que Nossos Clientes Dizem</h2>
+          <h2 className="section-title uppercase">O Que Nossos Clientes Dizem</h2>
           <p className="section-subtitle">
             Confira o depoimento de quem já utilizou nossos serviços de manutenção de aquecedores
           </p>
@@ -272,7 +273,7 @@ const Testimonials = () => {
 
         <div className="mt-12 text-center">
           <a
-            href="https://wa.me/551144445555?text=Olá,%20gostaria%20de%20um%20atendimento"
+            href="https://wa.me/5511978025373?text=Olá,%20estou%20precisando%20de%20assistência%20técnica%20para%20meu%20aquecedor.%20Pode%20me%20ajudar?"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary inline-flex items-center"

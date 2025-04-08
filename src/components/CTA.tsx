@@ -42,7 +42,7 @@ const CTA = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <div className="md:w-1/2 mb-8 md:mb-0">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 uppercase">
               Emergência com seu aquecedor?
             </h2>
             <p className="text-xl text-white/90 mb-6 max-w-lg">
@@ -59,15 +59,12 @@ const CTA = () => {
             </div>
 
             <div className="flex gap-4">
-              <a
-                href="https://wa.me/5511978025373?text=Atendimento%20emergencial"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary bg-white text-secondary hover:bg-gray-100 flex items-center justify-center gap-2"
+              <div
+                className="btn-secondary bg-white text-secondary cursor-default flex items-center justify-center gap-2"
               >
                 <span>Atendimento de Emergência</span>
                 <ArrowRight className="h-5 w-5" />
-              </a>
+              </div>
             </div>
           </div>
 
@@ -77,7 +74,7 @@ const CTA = () => {
                 Atendimento Emergencial
               </h3>
               <p className="text-muted mb-6">
-                Preencha o formulário para atendimento prioritário
+                Preencha o formulário para atendimento emergencial
               </p>
 
               <form className="space-y-4" onSubmit={handleSubmit}>
@@ -125,7 +122,7 @@ const CTA = () => {
             </div>
             <div className="bg-primary px-8 py-4">
               <p className="text-white text-center font-medium">
-                Atendimento prioritário em horário comercial
+                Atendimento emergencial fora de horário comercial!
               </p>
             </div>
           </div>

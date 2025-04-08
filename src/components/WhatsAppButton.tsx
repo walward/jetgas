@@ -2,9 +2,12 @@
 import React from "react";
 
 const WhatsAppButton = () => {
+  const defaultMessage = "Olá, estou precisando de assistência técnica para meu aquecedor. Pode me ajudar?";
+  const encodedMessage = encodeURIComponent(defaultMessage);
+
   return (
     <a
-      href="https://wa.me/5511978025373?text=Olá,%20gostaria%20de%20um%20atendimento"
+      href={`https://wa.me/5511978025373?text=${encodedMessage}`}
       target="_blank"
       rel="noopener noreferrer"
       className="btn-whatsapp"
