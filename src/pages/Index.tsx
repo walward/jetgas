@@ -30,7 +30,7 @@ const Index = () => {
 
     // Criar e adicionar o script do Google Maps
     const script = document.createElement('script');
-    // Substitua YOUR_API_KEY pela chave real ou use uma chave de exemplo para desenvolvimento
+    // Usando o API key (substitua pela chave real em produção)
     script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyA-sample-key&libraries=places&callback=initGoogleMaps";
     script.async = true;
     script.defer = true;

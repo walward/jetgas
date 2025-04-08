@@ -1,7 +1,13 @@
 
 import React from "react";
-import { Flame, Wrench, ShieldCheck, Settings, Fan, ThermometerSnowflake } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Flame, Wrench, ShieldCheck, Settings, Fan, ThermometerSnowflake, ChevronLeft, ChevronRight } from "lucide-react";
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext
+} from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
 const Services = () => {
@@ -67,7 +73,7 @@ const Services = () => {
     {name: "Yume", logo: "/lovable-uploads/c03ffcdb-57d8-41a5-bf5a-5314a4984fcf.png"}
   ];
 
-  // Plugin para autoplay do carrossel
+  // Plugin para autoplay do carrossel com delay de 2 segundos (mais rápido)
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: false })
   );
@@ -134,7 +140,7 @@ const Services = () => {
                 dragFree: true,
               }}
               plugins={[plugin.current]}
-              className="w-full"
+              className="w-full relative"
               onMouseEnter={plugin.current.stop}
               onMouseLeave={plugin.current.reset}
             >
@@ -151,6 +157,8 @@ const Services = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
+              <CarouselPrevious className="absolute left-0 -translate-x-1/2" />
+              <CarouselNext className="absolute right-0 translate-x-1/2" />
             </Carousel>
           </div>
         </div>

@@ -74,7 +74,7 @@ const CTA = () => {
           <div className="md:w-5/12 bg-white rounded-xl shadow-custom overflow-hidden">
             <div className="p-8">
               <h3 className="text-2xl font-bold text-primary mb-2">
-                Atendimento Prioritário
+                Atendimento Emergencial
               </h3>
               <p className="text-muted mb-6">
                 Preencha o formulário para atendimento prioritário

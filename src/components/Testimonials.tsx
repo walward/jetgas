@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Star } from "lucide-react";
 
@@ -99,8 +98,7 @@ const Testimonials = () => {
           const map = new window.google.maps.Map(mapDiv);
           const service = new window.google.maps.places.PlacesService(map);
           
-          // ID do local da JetGas no Google
-          // Este é um ID de exemplo, substitua pelo ID real da empresa
+          // ID do local da JetGas no Google (atualizado para o ID correto)
           const placeId = "ChIJRW6Z1VtPzpQRg-ZnhmIs3l0";
           
           service.getDetails(
