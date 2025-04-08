@@ -14,15 +14,28 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const Index = () => {
   // Prevent horizontal scrolling on mobile
   useEffect(() => {
+    let touchStartX = 0;
+    
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartX = e.touches[0].clientX;
+    };
+    
     const handleTouchMove = (e: TouchEvent) => {
-      if (Math.abs(window.innerWidth - document.documentElement.clientWidth) > 0) {
+      const touchEndX = e.touches[0].clientX;
+      const diffX = touchStartX - touchEndX;
+      
+      // If horizontal scroll detected and page has horizontal overflow
+      if (Math.abs(diffX) > Math.abs(window.innerWidth - document.documentElement.clientWidth)) {
         e.preventDefault();
       }
     };
 
-    document.body.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('touchstart', handleTouchStart, { passive: true });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    
     return () => {
-      document.body.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('touchstart', handleTouchStart);
+      document.removeEventListener('touchmove', handleTouchMove);
     };
   }, []);
 

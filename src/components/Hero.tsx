@@ -39,8 +39,8 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <div className="md:w-1/2 mb-10 md:mb-0 text-white">
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-              <span className="text-white font-semibold">
-                Manutenção de aquecedores há mais de 20 anos
+              <span className="text-white font-semibold whitespace-nowrap">
+                Mais de 20 anos atendendo com excelência
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 uppercase">
