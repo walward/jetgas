@@ -65,7 +65,7 @@ const Services = () => {
               <p className="text-muted">{service.description}</p>
               <div className="mt-6">
                 <a
-                  href="https://wa.me/551144445555?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20"
+                  href="https://wa.me/5511978025373?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-secondary font-semibold inline-flex items-center hover:underline"

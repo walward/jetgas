@@ -26,7 +26,7 @@ const CTA = () => {
 
             <div className="flex gap-4">
               <a
-                href="https://wa.me/551144445555?text=EMERGÊNCIA:%20Preciso%20de%20assistência%20urgente%20com%20meu%20aquecedor"
+                href="https://wa.me/5511978025373?text=EMERGÊNCIA:%20Preciso%20de%20assistência%20urgente%20com%20meu%20aquecedor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary bg-white text-secondary hover:bg-gray-100 flex items-center justify-center gap-2"
