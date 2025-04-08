@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <div className="bg-white inline-block p-2 rounded-lg mb-4">
               <img 
-                src="/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png" 
+                src="/lovable-uploads/b81cbc14-dcbf-4f1a-bfa2-358252d8c52b.png" 
                 alt="JetGas Logo" 
                 className="h-12" 
               />
