@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
@@ -44,8 +43,8 @@ const Hero = () => {
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-              Manutenção de Aquecedores com{" "}
-              <span className="text-secondary">Segurança e Qualidade</span>
+              MANUTENÇÃO DE AQUECEDORES COM{" "}
+              <span className="text-secondary">SEGURANÇA E QUALIDADE</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-lg">
               Especialistas em manutenção, instalação e conserto de aquecedores de todas as marcas com atendimento rápido e eficiente.

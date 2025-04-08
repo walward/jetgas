@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -11,42 +11,9 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-declare global {
-  interface Window {
-    initGoogleMaps?: () => void;
-  }
-}
-
 const Index = () => {
-  // Adicionar o script do Google para exibição de resenhas
-  useEffect(() => {
-    // Definir uma função global que o script do Google Maps pode chamar quando carregado
-    window.initGoogleMaps = () => {
-      console.log('Google Maps API carregado com sucesso');
-      // Disparar um evento personalizado que o componente Testimonials pode escutar
-      const event = new Event('google-maps-loaded');
-      window.dispatchEvent(event);
-    };
-
-    // Criar e adicionar o script do Google Maps
-    const script = document.createElement('script');
-    // Usar uma API key válida para o Google Maps
-    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDqhmdN7U9bFLGDLIWNUfDclT4KsIZQDvk&libraries=places&callback=initGoogleMaps";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Limpar o script e a função global quando o componente for desmontado
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-      delete window.initGoogleMaps;
-    };
-  }, []);
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
       <Hero />
       <Services />

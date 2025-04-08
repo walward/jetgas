@@ -20,7 +20,7 @@ const CTA = () => {
     e.preventDefault();
     
     // Prepare WhatsApp message with form data
-    const message = `EMERGÊNCIA: Olá, meu nome é ${formData.nome}. Estou com o seguinte problema: ${formData.problema}. Meu telefone é ${formData.telefone}.`;
+    const message = `Atendimento emergencial: Olá, meu nome é ${formData.nome}. Estou com o seguinte problema: ${formData.problema}. Meu telefone é ${formData.telefone}.`;
     
     // Encode the message for URL
     const encodedMessage = encodeURIComponent(message);
@@ -43,7 +43,7 @@ const CTA = () => {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 uppercase">
-              Emergência com seu aquecedor?
+              ATENDIMENTO EMERGENCIAL
             </h2>
             <p className="text-xl text-white/90 mb-6 max-w-lg">
               Não fique sem água quente! Nossos técnicos estão prontos para resolver seu problema com rapidez e eficiência.
@@ -60,10 +60,9 @@ const CTA = () => {
 
             <div className="flex gap-4">
               <div
-                className="btn-secondary bg-white text-secondary cursor-default flex items-center justify-center gap-2"
+                className="btn-secondary bg-white text-secondary flex items-center justify-center gap-2 transform-none hover:transform-none hover:shadow-none"
               >
-                <span>Atendimento de Emergência</span>
-                <ArrowRight className="h-5 w-5" />
+                <span>Atendimento Emergencial</span>
               </div>
             </div>
           </div>
