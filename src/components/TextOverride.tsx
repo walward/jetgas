@@ -1,7 +1,10 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const TextOverride = () => {
+  // Use a ref to store timeout ID
+  const timeoutRef = useRef<number | null>(null);
+  
   useEffect(() => {
     // Function to find and replace the text
     const replaceGuaranteeText = () => {
@@ -34,17 +37,17 @@ const TextOverride = () => {
     };
 
     // Run once when component mounts with a small delay to ensure DOM is ready
-    setTimeout(replaceGuaranteeText, 500);
+    timeoutRef.current = window.setTimeout(replaceGuaranteeText, 500);
     
     // Set up a mutation observer to watch for DOM changes
-    const observer = new MutationObserver(mutations => {
+    const observer = new MutationObserver(() => {
       // Use a debounce to avoid excessive calls
-      if (observer.timeout) {
-        clearTimeout(observer.timeout);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
       }
       
-      // @ts-ignore - Adding custom property to observer
-      observer.timeout = setTimeout(() => {
+      // Set new timeout
+      timeoutRef.current = window.setTimeout(() => {
         replaceGuaranteeText();
       }, 100);
     });
@@ -59,10 +62,9 @@ const TextOverride = () => {
     return () => {
       // Clean up the observer when component unmounts
       observer.disconnect();
-      // @ts-ignore - Clearing custom property
-      if (observer.timeout) {
-        // @ts-ignore - Clearing custom property
-        clearTimeout(observer.timeout);
+      // Clear any pending timeout
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
       }
     };
   }, []);
