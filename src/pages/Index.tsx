@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
-  // Prevent horizontal scrolling on mobile with stronger approach
+  // Prevent horizontal scrolling on mobile with type-safe approach
   useEffect(() => {
     // Apply styles directly to html and body elements
     document.documentElement.style.overflow = 'hidden';
@@ -25,12 +25,10 @@ const Index = () => {
     document.body.style.width = '100%';
     document.body.style.position = 'relative';
     document.body.style.touchAction = 'pan-y';
-    document.body.style.msTouchAction = 'pan-y';
-    document.body.style.WebkitOverflowScrolling = 'touch';
     
     // Block horizontal touch moves
-    const handleTouchMove = (e) => {
-      if (Math.abs(e.touches[0].clientX - e.touches[0].startClientX) > 10) {
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches && e.touches[0] && Math.abs(e.touches[0].clientX - e.touches[0].startClientX) > 10) {
         e.preventDefault();
       }
     };
@@ -39,9 +37,19 @@ const Index = () => {
     
     return () => {
       document.removeEventListener('touchmove', handleTouchMove);
-      // Reset styles
-      document.documentElement.style = '';
-      document.body.style = '';
+      // Reset styles in a type-safe way
+      const htmlStyle = document.documentElement.style;
+      htmlStyle.overflow = '';
+      htmlStyle.height = '';
+      htmlStyle.width = '';
+      htmlStyle.position = '';
+      
+      const bodyStyle = document.body.style;
+      bodyStyle.overflow = '';
+      bodyStyle.height = '';
+      bodyStyle.width = '';
+      bodyStyle.position = '';
+      bodyStyle.touchAction = '';
     };
   }, []);
 
