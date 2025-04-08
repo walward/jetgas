@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Clock, Award, BadgeCheck, Tool, Zap, CalendarClock } from "lucide-react";
+import { Clock, Award, BadgeCheck, Wrench, Zap, CalendarClock } from "lucide-react";
 
 const Benefits = () => {
   const benefits = [
@@ -20,7 +20,7 @@ const Benefits = () => {
       description: "Todos os serviços realizados possuem garantia de até 90 dias",
     },
     {
-      icon: <Tool className="h-10 w-10 text-white" />,
+      icon: <Wrench className="h-10 w-10 text-white" />,
       title: "Peças Originais",
       description: "Trabalhamos apenas com peças originais de fábrica",
     },
