@@ -1,9 +1,24 @@
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Star } from "lucide-react";
 
+interface Review {
+  name: string;
+  location: string;
+  rating: number;
+  content: string;
+  date: string;
+  photoUrl?: string;
+}
+
 const Testimonials = () => {
-  const testimonials = [
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [averageRating, setAverageRating] = useState(0);
+  const [totalReviews, setTotalReviews] = useState(0);
+  
+  // Avaliações de backup caso a API do Google não funcione
+  const fallbackReviews = [
     {
       name: "Roberto Silva",
       location: "São Paulo, SP",
@@ -54,6 +69,93 @@ const Testimonials = () => {
     },
   ];
 
+  useEffect(() => {
+    // Tentar obter reviews do Google
+    const fetchGoogleReviews = async () => {
+      try {
+        // Verificar se a API do Google Maps está disponível
+        if (window.google && window.google.maps && window.google.maps.places) {
+          const map = new google.maps.Map(document.createElement("div"));
+          const service = new google.maps.places.PlacesService(map);
+          
+          // ID do local da JetGas no Google (exemplo)
+          // Este precisa ser o ID real da empresa no Google
+          const placeId = "ChIJRW6Z1VtPzpQRg-ZnhmIs3l0"; // Exemplo - substitua pelo ID real
+          
+          service.getDetails(
+            {
+              placeId: placeId,
+              fields: ["reviews", "rating", "user_ratings_total"],
+            },
+            (place, status) => {
+              if (
+                status === google.maps.places.PlacesServiceStatus.OK &&
+                place &&
+                place.reviews
+              ) {
+                const googleReviews = place.reviews.map((review: any) => {
+                  // Converter data de timestamp para "X tempo atrás"
+                  const reviewDate = new Date(review.time * 1000);
+                  const now = new Date();
+                  const diffMs = now.getTime() - reviewDate.getTime();
+                  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                  
+                  let dateStr = "";
+                  if (diffDays < 7) {
+                    dateStr = `${diffDays} dias atrás`;
+                  } else if (diffDays < 30) {
+                    dateStr = `${Math.floor(diffDays / 7)} semanas atrás`;
+                  } else {
+                    dateStr = `${Math.floor(diffDays / 30)} meses atrás`;
+                  }
+                  
+                  return {
+                    name: review.author_name,
+                    location: "Cliente Google",
+                    rating: review.rating,
+                    content: review.text,
+                    date: dateStr,
+                    photoUrl: review.profile_photo_url,
+                  };
+                });
+
+                setReviews(googleReviews);
+                setAverageRating(place.rating || 4.9);
+                setTotalReviews(place.user_ratings_total || googleReviews.length);
+                console.log("Avaliações do Google carregadas com sucesso:", googleReviews);
+              } else {
+                console.log("Erro ao buscar avaliações do Google:", status);
+                setReviews(fallbackReviews);
+                setAverageRating(4.9);
+                setTotalReviews(fallbackReviews.length);
+              }
+              setLoading(false);
+            }
+          );
+        } else {
+          console.log("API do Google Maps não disponível, usando avaliações de backup");
+          setReviews(fallbackReviews);
+          setAverageRating(4.9);
+          setTotalReviews(fallbackReviews.length);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Erro ao carregar avaliações do Google:", error);
+        setReviews(fallbackReviews);
+        setAverageRating(4.9);
+        setTotalReviews(fallbackReviews.length);
+        setLoading(false);
+      }
+    };
+
+    // Esperar um pouco para ter certeza que o script do Google foi carregado
+    const timer = setTimeout(() => {
+      fetchGoogleReviews();
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const renderStars = (rating: number) => {
     return Array(5)
       .fill(0)
@@ -82,44 +184,62 @@ const Testimonials = () => {
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star
                     key={star}
-                    className="h-6 w-6 text-yellow-400 fill-yellow-400"
+                    className={`h-6 w-6 ${
+                      star <= Math.round(averageRating) 
+                        ? "text-yellow-400 fill-yellow-400" 
+                        : "text-gray-300"
+                    }`}
                   />
                 ))}
               </div>
-              <span className="ml-2 text-lg font-semibold">4.9/5</span>
+              <span className="ml-2 text-lg font-semibold">{averageRating.toFixed(1)}/5</span>
             </div>
             <span className="mx-4 text-gray-400">|</span>
-            <span className="text-lg font-semibold">214 avaliações</span>
+            <span className="text-lg font-semibold">{totalReviews} avaliações</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm card-hover"
-            >
-              <div className="flex justify-between items-center mb-4">
-                <div className="flex">{renderStars(testimonial.rating)}</div>
-                <span className="text-sm text-gray-500">
-                  {testimonial.date}
-                </span>
-              </div>
-              <p className="text-gray-700 mb-6">"{testimonial.content}"</p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white text-xl font-bold">
-                  {testimonial.name.charAt(0)}
+        {loading ? (
+          <div className="flex justify-center items-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {reviews.slice(0, 6).map((review, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm card-hover"
+              >
+                <div className="flex justify-between items-center mb-4">
+                  <div className="flex">{renderStars(review.rating)}</div>
+                  <span className="text-sm text-gray-500">
+                    {review.date}
+                  </span>
                 </div>
-                <div className="ml-3">
-                  <div className="font-semibold">{testimonial.name}</div>
-                  <div className="text-sm text-gray-500">
-                    {testimonial.location}
+                <p className="text-gray-700 mb-6 min-h-[80px]">"{review.content}"</p>
+                <div className="flex items-center">
+                  {review.photoUrl ? (
+                    <img 
+                      src={review.photoUrl} 
+                      alt={review.name} 
+                      className="w-12 h-12 rounded-full"
+                    />
+                  ) : (
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white text-xl font-bold">
+                      {review.name.charAt(0)}
+                    </div>
+                  )}
+                  <div className="ml-3">
+                    <div className="font-semibold">{review.name}</div>
+                    <div className="text-sm text-gray-500">
+                      {review.location}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         <div className="mt-12 text-center">
           <a
