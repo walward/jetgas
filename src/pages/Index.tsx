@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -26,17 +26,32 @@ const Index = () => {
     document.body.style.position = 'relative';
     document.body.style.touchAction = 'pan-y';
     
+    // Store initial touch position
+    let touchStartX = 0;
+    
+    const handleTouchStart = (e: TouchEvent) => {
+      if (e.touches && e.touches[0]) {
+        touchStartX = e.touches[0].clientX;
+      }
+    };
+    
     // Block horizontal touch moves
     const handleTouchMove = (e: TouchEvent) => {
-      if (e.touches && e.touches[0] && Math.abs(e.touches[0].clientX - e.touches[0].startClientX) > 10) {
-        e.preventDefault();
+      if (e.touches && e.touches[0]) {
+        const touchCurrentX = e.touches[0].clientX;
+        if (Math.abs(touchCurrentX - touchStartX) > 10) {
+          e.preventDefault();
+        }
       }
     };
 
+    document.addEventListener('touchstart', handleTouchStart, { passive: true });
     document.addEventListener('touchmove', handleTouchMove, { passive: false });
     
     return () => {
+      document.removeEventListener('touchstart', handleTouchStart);
       document.removeEventListener('touchmove', handleTouchMove);
+      
       // Reset styles in a type-safe way
       const htmlStyle = document.documentElement.style;
       htmlStyle.overflow = '';
