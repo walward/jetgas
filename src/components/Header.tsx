@@ -76,7 +76,7 @@ const Header = () => {
             <div className="flex items-center">
               <Phone className="h-5 w-5 text-secondary mr-2" />
               <span className="font-semibold text-primary">
-                (11) 97802-5373
+                (11) 3461-8215
               </span>
             </div>
             <a
@@ -138,7 +138,7 @@ const Header = () => {
             <div className="flex items-center pt-2">
               <Phone className="h-5 w-5 text-secondary mr-2" />
               <span className="font-semibold text-primary">
-                (11) 97802-5373
+                (11) 3461-8215
               </span>
             </div>
             <a

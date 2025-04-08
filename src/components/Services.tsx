@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Flame, Wrench, ShieldCheck, Settings, Fan, ThermometerSnowflake } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 const Services = () => {
   const services = [
@@ -40,6 +41,13 @@ const Services = () => {
       description:
         "Limpeza profunda que melhora a qualidade do aquecimento e prolonga a vida útil do equipamento.",
     },
+  ];
+
+  const brands = [
+    "Rinnai", "Komeco", "Inova", "Heliotek", "Bosch", "Harman", 
+    "Yume", "Lorenzetti", "Rheem", "Sakura", "Cumulus", "Nordik", 
+    "Junkers", "Equibrás", "Kent", "Thermotini", "Chama", "Orbis", 
+    "General Heater", "Rowa", "Cosmopolita"
   ];
 
   return (
@@ -95,25 +103,26 @@ const Services = () => {
           <h3 className="text-2xl font-semibold text-primary mb-8">
             Trabalhamos com todas as marcas de aquecedores
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-center justify-center">
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <div className="h-12 flex items-center justify-center text-primary font-bold">Rinnai</div>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <div className="h-12 flex items-center justify-center text-primary font-bold">Lorenzetti</div>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <div className="h-12 flex items-center justify-center text-primary font-bold">Komeco</div>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <div className="h-12 flex items-center justify-center text-primary font-bold">Bosch</div>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <div className="h-12 flex items-center justify-center text-primary font-bold">Orbis</div>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <div className="h-12 flex items-center justify-center text-primary font-bold">Cumulus</div>
-            </div>
+          
+          <div className="max-w-5xl mx-auto">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+                dragFree: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="py-4">
+                {brands.map((brand, index) => (
+                  <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/6">
+                    <div className="p-4 bg-white rounded-lg shadow-sm h-24 flex items-center justify-center">
+                      <div className="text-primary font-bold text-center">{brand}</div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
       </div>

@@ -1,8 +1,32 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
 const Hero = () => {
+  const [formData, setFormData] = useState({
+    nome: "",
+    telefone: "",
+    servico: "",
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Prepare WhatsApp message with form data
+    const message = `Olá, meu nome é ${formData.nome}. Estou interessado(a) em ${formData.servico || "serviços de aquecedor"}. Meu telefone é ${formData.telefone}.`;
+    
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Open WhatsApp with the pre-filled message
+    window.open(`https://wa.me/5511978025373?text=${encodedMessage}`, "_blank");
+  };
+
   return (
     <section
       id="inicio"
@@ -29,7 +53,7 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://wa.me/551144445555?text=Olá,%20gostaria%20de%20um%20atendimento"
+                href="https://wa.me/5511978025373?text=Olá,%20gostaria%20de%20um%20atendimento"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary flex items-center justify-center gap-2 text-lg"
@@ -70,30 +94,44 @@ const Hero = () => {
               <p className="text-muted mb-6">
                 Preencha o formulário abaixo e receba atendimento prioritário
               </p>
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <input
                     type="text"
+                    name="nome"
                     placeholder="Nome"
+                    value={formData.nome}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                    required
                   />
                 </div>
                 <div>
                   <input
                     type="tel"
+                    name="telefone"
                     placeholder="Telefone / WhatsApp"
+                    value={formData.telefone}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                    required
                   />
                 </div>
                 <div>
-                  <select className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary appearance-none bg-white">
-                    <option value="" disabled selected>
+                  <select 
+                    name="servico"
+                    value={formData.servico}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary appearance-none bg-white"
+                    required
+                  >
+                    <option value="" disabled>
                       Selecione o serviço
                     </option>
-                    <option value="manutencao">Manutenção</option>
-                    <option value="instalacao">Instalação</option>
-                    <option value="conserto">Conserto</option>
-                    <option value="outro">Outro</option>
+                    <option value="manutenção de aquecedor">Manutenção</option>
+                    <option value="instalação de aquecedor">Instalação</option>
+                    <option value="conserto de aquecedor">Conserto</option>
+                    <option value="outro serviço de aquecedor">Outro</option>
                   </select>
                 </div>
                 <button

@@ -5,28 +5,28 @@ import { MapPin } from "lucide-react";
 const Areas = () => {
   const regions = [
     {
-      title: "Zona Norte",
-      neighborhoods: ["Santana", "Tucuruvi", "Vila Guilherme", "Jaçanã", "Mandaqui"],
-    },
-    {
       title: "Zona Sul",
-      neighborhoods: ["Santo Amaro", "Moema", "Campo Belo", "Brooklin", "Jabaquara"],
-    },
-    {
-      title: "Zona Leste",
-      neighborhoods: ["Tatuapé", "Mooca", "Penha", "Itaquera", "São Miguel"],
+      neighborhoods: [
+        "Vila Mariana", "Saúde", "Jabaquara", "Ipiranga", "Sacomã", 
+        "Paraíso", "Moema", "Campo Belo", "Brooklin", "Santo Amaro", 
+        "Campo Grande", "Campo Limpo", "Socorro", "Cursino", "Jardim Ângela", 
+        "Jardim São Luiz", "Aeroporto", "Interlagos"
+      ],
     },
     {
       title: "Zona Oeste",
-      neighborhoods: ["Pinheiros", "Lapa", "Butantã", "Perdizes", "Vila Leopoldina"],
-    },
-    {
-      title: "Centro",
-      neighborhoods: ["Bela Vista", "Santa Cecília", "República", "Consolação"],
+      neighborhoods: [
+        "Itaim Bibi", "Vila Olímpia", "Morumbi", "Vila Andrade", 
+        "Vila Sônia", "Jardim Europa", "Jardim Paulista", "Cidade Jardim", 
+        "Lapa", "Alto de Pinheiros", "Alto da Lapa", "Pinheiros"
+      ],
     },
     {
       title: "Grande São Paulo",
-      neighborhoods: ["Guarulhos", "Osasco", "Santo André", "São Bernardo", "Diadema"],
+      neighborhoods: [
+        "Alphaville", "Barueri", "Santana de Parnaíba", "Cotia", 
+        "Mogi das Cruzes", "Caieiras"
+      ],
     },
   ];
 
@@ -52,14 +52,14 @@ const Areas = () => {
                   {region.title}
                 </h3>
               </div>
-              <ul className="space-y-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {region.neighborhoods.map((neighborhood, i) => (
-                  <li key={i} className="flex items-center">
+                  <div key={i} className="flex items-center">
                     <span className="h-1.5 w-1.5 rounded-full bg-secondary mr-2"></span>
                     <span className="text-muted">{neighborhood}</span>
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
@@ -69,7 +69,7 @@ const Areas = () => {
             Não encontrou sua região? Entre em contato para verificar disponibilidade
           </p>
           <a
-            href="https://wa.me/551144445555?text=Olá,%20gostaria%20de%20verificar%20se%20vocês%20atendem%20minha%20região"
+            href="https://wa.me/5511978025373?text=Olá,%20gostaria%20de%20verificar%20se%20vocês%20atendem%20minha%20região"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-flex items-center"

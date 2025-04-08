@@ -27,8 +27,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-primary mb-1">Telefone</p>
-                    <p className="text-muted">(11) 4444-5555</p>
-                    <p className="text-muted">(11) 98765-4321 (WhatsApp)</p>
+                    <p className="text-muted">(11) 3461-8215</p>
+                    <p className="text-muted">(11) 97802-5373 (WhatsApp)</p>
                   </div>
                 </div>
 
