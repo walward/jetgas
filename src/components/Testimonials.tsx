@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Star, Quote } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface Review {
   name: string;
@@ -51,7 +52,7 @@ const Testimonials = () => {
   ];
 
   const averageRating = 4.8;
-  const totalReviews = 124; // Updated to show 124 reviews
+  const totalReviews = 124;
 
   const renderStars = (rating: number) => {
     return Array(5)
@@ -64,6 +65,13 @@ const Testimonials = () => {
           }`}
         />
       ));
+  };
+
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map(part => part.charAt(0))
+      .join('');
   };
 
   const googleReviewsUrl = "https://www.google.com/search?sca_esv=540de929b15f835b&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzYiPzx8gAwHPWCQefAmBY0Sy_JSU1qT3F4pv9JXQSYl9LZQ159ineDAbmZRgqPkPbXdQP9-yDy1gxCC8ER4eB400xrL2IIl9d4HDS1en1Bg_ZcDmPA%3D%3D&q=JetG%C3%A1s+Aquecedores+Coment%C3%A1rios&sa=X&ved=2ahUKEwjBqOrQu8mMAxVaOrkGHfFZOBYQ0bkNegQILBAE&biw=1396&bih=663&dpr=1.38";
@@ -112,17 +120,12 @@ const Testimonials = () => {
               </div>
               <p className="text-gray-700 mb-6 min-h-[80px] text-sm sm:text-base break-words">"{review.content}"</p>
               <div className="flex items-center">
-                {review.avatar ? (
-                  <img 
-                    src={review.avatar} 
-                    alt={review.name}
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover flex-shrink-0"
-                  />
-                ) : (
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold flex-shrink-0">
-                    {review.name.charAt(0)}
-                  </div>
-                )}
+                <Avatar className="w-10 h-10 sm:w-12 sm:h-12 text-white flex-shrink-0">
+                  <AvatarImage src={review.avatar} alt={review.name} />
+                  <AvatarFallback className="bg-primary text-lg sm:text-xl font-bold">
+                    {getInitials(review.name)}
+                  </AvatarFallback>
+                </Avatar>
                 <div className="ml-3">
                   <div className="font-semibold text-sm sm:text-base">{review.name}</div>
                   <div className="text-xs text-gray-500">Cliente verificado</div>
@@ -136,7 +139,7 @@ const Testimonials = () => {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/3">
               <img 
-                src="https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                 alt="Cliente satisfeito" 
                 className="rounded-lg shadow-md w-full h-auto"
               />

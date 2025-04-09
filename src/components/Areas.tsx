@@ -13,7 +13,7 @@ const Areas = () => {
         "Campo Grande", "Campo Limpo", "Socorro", "Cursino", "Jardim Ângela", 
         "Jardim São Luiz", "Aeroporto", "Interlagos"
       ],
-      image: "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1585208798174-6cedd86e019a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" // Zona Sul São Paulo
     },
     {
       title: "Zona Oeste",
@@ -22,7 +22,7 @@ const Areas = () => {
         "Vila Sônia", "Jardim Europa", "Jardim Paulista", "Cidade Jardim", 
         "Lapa", "Alto de Pinheiros", "Alto da Lapa", "Pinheiros"
       ],
-      image: "https://images.unsplash.com/photo-1706291004976-255d8faed1c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1567793209653-838dd1cf7145?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" // Zona Oeste São Paulo
     },
     {
       title: "Grande São Paulo",
@@ -30,7 +30,7 @@ const Areas = () => {
         "Alphaville", "Barueri", "Santana de Parnaíba", "Cotia", 
         "Mogi das Cruzes", "Caieiras"
       ],
-      image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1554168848-228452c09d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" // Grande São Paulo
     },
   ];
 
@@ -81,7 +81,7 @@ const Areas = () => {
           <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-xl overflow-hidden">
             <div className="md:w-1/2 h-64 md:h-auto">
               <img 
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
+                src="https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
                 alt="Mapa de atendimento" 
                 className="w-full h-full object-cover"
               />

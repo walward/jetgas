@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Flame, Wrench, ShieldCheck, Settings, Fan, ThermometerSnowflake } from "lucide-react";
 import { 
@@ -19,42 +18,42 @@ const Services = () => {
       description:
         "Evite surpresas! Realizamos a manutenção preventiva do seu aquecedor para garantir o bom funcionamento e prolongar a vida útil.",
       icon: Flame,
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Conserto e Reparo",
       description:
         "Aquecedor com defeito? Nossa equipe está pronta para diagnosticar e reparar qualquer problema, com peças de qualidade e garantia.",
       icon: Wrench,
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Instalação de Aquecedores",
       description:
         "Instalação segura e eficiente de aquecedores de todas as marcas e modelos, seguindo as normas técnicas e garantindo a sua segurança.",
       icon: ShieldCheck,
-      image: "https://images.unsplash.com/photo-1581092921461-39b99d000440?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1609952048180-7b35ea6b083b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Regulagem de Temperatura",
       description:
         "Ajuste preciso da temperatura do seu aquecedor para garantir o máximo de conforto e economia, evitando o desperdício de gás e energia.",
       icon: Settings,
-      image: "https://images.unsplash.com/photo-1527576539890-dfa815648363?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1517490232338-05e2fb640a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Limpeza e Descontaminação",
       description:
         "Removemos sujeiras, impurezas e resíduos que podem comprometer o desempenho do seu aquecedor, garantindo a qualidade da água e a sua saúde.",
       icon: Fan,
-      image: "https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Substituição de Peças",
       description:
         "Trocamos peças danificadas ou desgastadas por peças originais e compatíveis, garantindo o perfeito funcionamento do seu aquecedor.",
       icon: ThermometerSnowflake,
-      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1580901368919-7738efb0f87e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
   ];
   
@@ -125,7 +124,7 @@ const Services = () => {
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="lg:w-1/2">
               <img 
-                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80" 
+                src="https://images.unsplash.com/photo-1613979810553-5e0c87a47563?ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80" 
                 alt="Equipe especializada" 
                 className="rounded-lg shadow-md w-full h-auto"
               />
