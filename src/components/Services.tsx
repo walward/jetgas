@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Flame, Wrench, ShieldCheck, Settings, Fan, ThermometerSnowflake } from "lucide-react";
 import { 
@@ -124,8 +125,8 @@ const Services = () => {
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="lg:w-1/2">
               <img 
-                src="https://images.unsplash.com/photo-1613979810553-5e0c87a47563?ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80" 
-                alt="Equipe especializada" 
+                src="/lovable-uploads/c176a826-7c05-4006-b1b8-8b5a4c92faec.png" 
+                alt="Técnico especializado em manutenção de aquecedores" 
                 className="rounded-lg shadow-md w-full h-auto"
               />
             </div>
