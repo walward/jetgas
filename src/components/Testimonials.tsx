@@ -139,13 +139,13 @@ const Testimonials = () => {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/3">
               <img 
-                src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src="/lovable-uploads/b238cb41-6e15-4c6c-9884-1bf2ea91b09b.png" 
                 alt="Cliente satisfeito" 
                 className="rounded-lg shadow-md w-full h-auto"
               />
             </div>
             <div className="md:w-2/3">
-              <h3 className="text-2xl font-bold text-primary mb-4">Clientes Satisfeitos em Todo São Paulo</h3>
+              <h3 className="text-2xl font-bold text-primary mb-4 uppercase">CLIENTES SATISFEITOS EM TODO SÃO PAULO</h3>
               <p className="text-gray-700 mb-6">
                 Nossos técnicos são reconhecidos pelo profissionalismo e qualidade em cada serviço. 
                 Trabalhamos com dedicação para garantir que cada cliente tenha uma experiência positiva 

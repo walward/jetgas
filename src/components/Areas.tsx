@@ -13,7 +13,7 @@ const Areas = () => {
         "Campo Grande", "Campo Limpo", "Socorro", "Cursino", "Jardim Ângela", 
         "Jardim São Luiz", "Aeroporto", "Interlagos"
       ],
-      image: "https://images.unsplash.com/photo-1585208798174-6cedd86e019a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" // Zona Sul São Paulo
+      image: "/lovable-uploads/d4dd2b5b-96f5-4163-9906-5e64009d61eb.png" // Zona Sul São Paulo
     },
     {
       title: "Zona Oeste",
@@ -22,7 +22,7 @@ const Areas = () => {
         "Vila Sônia", "Jardim Europa", "Jardim Paulista", "Cidade Jardim", 
         "Lapa", "Alto de Pinheiros", "Alto da Lapa", "Pinheiros"
       ],
-      image: "https://images.unsplash.com/photo-1567793209653-838dd1cf7145?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" // Zona Oeste São Paulo
+      image: "/lovable-uploads/94277785-8910-4a80-8d00-aa7c98556850.png" // Zona Oeste São Paulo
     },
     {
       title: "Grande São Paulo",
@@ -30,7 +30,7 @@ const Areas = () => {
         "Alphaville", "Barueri", "Santana de Parnaíba", "Cotia", 
         "Mogi das Cruzes", "Caieiras"
       ],
-      image: "https://images.unsplash.com/photo-1554168848-228452c09d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" // Grande São Paulo
+      image: "/lovable-uploads/f4f3335a-920a-4888-82b2-0678946aeaa8.png" // Grande São Paulo
     },
   ];
 
@@ -81,7 +81,7 @@ const Areas = () => {
           <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-xl overflow-hidden">
             <div className="md:w-1/2 h-64 md:h-auto">
               <img 
-                src="https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
+                src="/lovable-uploads/b2f0a3a7-6b33-45f6-afe6-62f30447378f.png" 
                 alt="Mapa de atendimento" 
                 className="w-full h-full object-cover"
               />
