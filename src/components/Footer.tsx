@@ -108,7 +108,7 @@ const Footer = () => {
                   className="text-white/80 hover:text-white transition-colors flex items-center"
                 >
                   <span className="mr-2">→</span>
-                  Instalação de Aquecedores
+                  Manutenção de Aquecedores
                 </a>
               </li>
               <li>
@@ -145,7 +145,10 @@ const Footer = () => {
                 <strong className="text-white">Email:</strong> contatojetgasaquecedores@gmail.com
               </li>
               <li className="text-white/80">
-                <strong className="text-white">Endereço:</strong> Av. Dória, 265 - Vila Alexandria, São Paulo - SP, CEP: 04635-070
+                <strong className="text-white">Endereço:</strong> Av. Dória, 265 - Vila Alexandria, São Paulo - SP
+              </li>
+              <li className="text-white/80">
+                <strong className="text-white whitespace-nowrap">CEP:</strong> <span className="whitespace-nowrap">04635-070</span>
               </li>
               <li className="text-white/80">
                 <strong className="text-white">CNPJ:</strong> 15.287.880.0001.04

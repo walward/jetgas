@@ -128,7 +128,7 @@ const Testimonials = () => {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/3">
               <img 
-                src="/lovable-uploads/dfa2d1ab-d9b5-4a7e-b0d3-d1fc8b3911a0.png" 
+                src="/lovable-uploads/ff13287f-3cc4-4496-b9c9-a58a5af7d263.png" 
                 alt="Cliente satisfeito" 
                 className="rounded-lg shadow-md w-full h-auto"
               />
