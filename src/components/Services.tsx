@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Flame, Wrench, ShieldCheck, Settings, Fan, ThermometerSnowflake } from "lucide-react";
 import { 
@@ -131,8 +130,8 @@ const Services = () => {
               />
             </div>
             <div className="lg:w-1/2">
-              <h3 className="text-3xl font-bold text-primary mb-4">
-                Nossa Equipe Especializada
+              <h3 className="text-3xl font-bold text-primary mb-4 uppercase">
+                NOSSA EQUIPE ESPECIALIZADA
               </h3>
               <p className="text-lg text-gray-700 mb-6">
                 Contamos com técnicos altamente qualificados e certificados, com vasta experiência 
