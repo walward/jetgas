@@ -7,7 +7,6 @@ import Benefits from "@/components/Benefits";
 import Testimonials from "@/components/Testimonials";
 import Areas from "@/components/Areas";
 import CTA from "@/components/CTA";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import TextOverride from "@/components/TextOverride";
@@ -71,7 +70,6 @@ const Index = () => {
       <Testimonials />
       <Areas />
       <CTA />
-      <Contact />
       <Footer />
       <WhatsAppButton />
       <TextOverride />

@@ -35,9 +35,7 @@ const Hero = () => {
       id="inicio"
       className="relative pt-28 pb-20 md:pt-36 md:pb-32 bg-gradient-to-br from-primary to-primary-light overflow-hidden"
     >
-      {/* Background with Image Overlay */}
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-15 mix-blend-overlay"></div>
-      
+      {/* Background pattern overlay */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0xLjEuOS0yIDItMmgxMmExIDEgMCAwIDEgMCAySDM4YTIgMiAwIDAgMS0yLTJtMC0xMmMwLTEuMS45LTIgMi0yaDEyYTEgMSAwIDAgMSAwIDJIMzhhMiAyIDAgMCAxLTItMm0tMTIgMGMwLTEuMS45LTIgMi0yaDEyYTEgMSAwIDAgMSAwIDJIMjZhMiAyIDAgMCAxLTItMm0wIDEyYzAtMS4xLjktMiAyLTJoMTJhMSAxIDAgMCAxIDAgMkgyNmEyIDIgMCAwIDEtMi0yIi8+PC9nPjwvZz48L3N2Zz4=')] opacity-10"></div>
 
       <div className="container mx-auto iphone-safe-container relative z-10">
@@ -97,7 +95,7 @@ const Hero = () => {
                 Precisando de assistência técnica?
               </h3>
               <p className="text-muted mb-6">
-                Preencha o formulário abaixo e receba atendimento emergencial
+                Preencha o formulário abaixo e solicite um orçamento
               </p>
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
@@ -147,9 +145,6 @@ const Hero = () => {
                   <ArrowRight className="h-5 w-5" />
                 </button>
               </form>
-              <p className="text-xs text-muted mt-4 text-center">
-                Atendimento emergencial fora de horário comercial!
-              </p>
             </div>
 
             {/* Floating badges */}

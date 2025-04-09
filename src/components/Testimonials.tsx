@@ -1,13 +1,12 @@
 
 import React from "react";
 import { Star, Quote } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 interface Review {
   name: string;
   rating: number;
   content: string;
-  avatar?: string;
 }
 
 const Testimonials = () => {
@@ -16,38 +15,32 @@ const Testimonials = () => {
     {
       name: "Sandra L. F.",
       rating: 5,
-      content: "Fui muito bem atendida tanto pela Camila, com quem solicitei informações e fiz agendamento, quanto pelo Sr. José Felipe, que fez o conserto do meu aquecedor. Ótimo trabalho, já sou cliente há muitos anos, recomendo!",
-      avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+      content: "Fui muito bem atendida tanto pela Camila, com quem solicitei informações e fiz agendamento, quanto pelo Sr. José Felipe, que fez o conserto do meu aquecedor. Ótimo trabalho, já sou cliente há muitos anos, recomendo!"
     },
     {
       name: "Jeferson O.",
       rating: 5,
-      content: "Um trabalho excelente gostei muito do atendimento, super educados, profissionais, fizeram o serviço deixaram tudo limpinho, foi uma indicação, e eu recomendo, ótimo trabalho.",
-      avatar: "https://randomuser.me/api/portraits/men/54.jpg"
+      content: "Um trabalho excelente gostei muito do atendimento, super educados, profissionais, fizeram o serviço deixaram tudo limpinho, foi uma indicação, e eu recomendo, ótimo trabalho."
     },
     {
       name: "João Roberto dos S. P.",
       rating: 5,
-      content: "Tenho um Aquecedor Alemão Junkers há 20 anos, sempre faço manutenção com essa empresa. Hoje fiz manutenção e troca de válvula de gás e a retirada do Aquecedor para levar para outro imóvel com o técnico José Edinaldo Brandão, que fez um serviço perfeito.",
-      avatar: "https://randomuser.me/api/portraits/men/43.jpg"
+      content: "Tenho um Aquecedor Alemão Junkers há 20 anos, sempre faço manutenção com essa empresa. Hoje fiz manutenção e troca de válvula de gás e a retirada do Aquecedor para levar para outro imóvel com o técnico José Edinaldo Brandão, que fez um serviço perfeito."
     },
     {
       name: "Vanessa C.",
       rating: 5,
-      content: "Excelente atendimento. Prestativos, atenciosos e rapidos, além do custo ser justo.",
-      avatar: "https://randomuser.me/api/portraits/women/17.jpg"
+      content: "Excelente atendimento. Prestativos, atenciosos e rapidos, além do custo ser justo."
     },
     {
       name: "Paulo A.",
       rating: 5,
-      content: "Rápido e eficiente atendimento. Não é o mais em conta, mas, transmite segurança/conhecimento e garantia.",
-      avatar: "https://randomuser.me/api/portraits/men/67.jpg"
+      content: "Rápido e eficiente atendimento. Não é o mais em conta, mas, transmite segurança/conhecimento e garantia."
     },
     {
       name: "Danilo D.",
       rating: 5,
-      content: "Liguei para os serviços na noite e já no dia seguinte foi executado. Top, pessoal sério e profissional, custo benefício correto.",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+      content: "Liguei para os serviços na noite e já no dia seguinte foi executado. Top, pessoal sério e profissional, custo benefício correto."
     },
   ];
 
@@ -121,7 +114,6 @@ const Testimonials = () => {
               <p className="text-gray-700 mb-6 min-h-[80px] text-sm sm:text-base break-words">"{review.content}"</p>
               <div className="flex items-center">
                 <Avatar className="w-10 h-10 sm:w-12 sm:h-12 text-white flex-shrink-0">
-                  <AvatarImage src={review.avatar} alt={review.name} />
                   <AvatarFallback className="bg-primary text-lg sm:text-xl font-bold">
                     {getInitials(review.name)}
                   </AvatarFallback>
