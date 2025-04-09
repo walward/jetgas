@@ -18,42 +18,42 @@ const Services = () => {
       description:
         "Evite surpresas! Realizamos a manutenção preventiva do seu aquecedor para garantir o bom funcionamento e prolongar a vida útil.",
       icon: Flame,
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "/lovable-uploads/808cd2c7-d041-4a8a-94c5-cea00b94af81.png"
     },
     {
       title: "Conserto e Reparo",
       description:
         "Aquecedor com defeito? Nossa equipe está pronta para diagnosticar e reparar qualquer problema, com peças de qualidade e garantia.",
       icon: Wrench,
-      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "/lovable-uploads/bcf45499-94c2-404e-9f3d-e68cf261f0ed.png"
     },
     {
       title: "Instalação de Aquecedores",
       description:
         "Instalação segura e eficiente de aquecedores de todas as marcas e modelos, seguindo as normas técnicas e garantindo a sua segurança.",
       icon: ShieldCheck,
-      image: "https://images.unsplash.com/photo-1609952048180-7b35ea6b083b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "/lovable-uploads/35088dc9-3f5e-4adb-982c-58cc91b06bf7.png"
     },
     {
       title: "Regulagem de Temperatura",
       description:
         "Ajuste preciso da temperatura do seu aquecedor para garantir o máximo de conforto e economia, evitando o desperdício de gás e energia.",
       icon: Settings,
-      image: "https://images.unsplash.com/photo-1517490232338-05e2fb640a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "/lovable-uploads/e727de36-b9e1-4595-9175-011ebe3a3e71.png"
     },
     {
       title: "Limpeza e Descontaminação",
       description:
         "Removemos sujeiras, impurezas e resíduos que podem comprometer o desempenho do seu aquecedor, garantindo a qualidade da água e a sua saúde.",
       icon: Fan,
-      image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "/lovable-uploads/dd0fe5b0-1e17-476a-881f-33ca3683a972.png"
     },
     {
       title: "Substituição de Peças",
       description:
         "Trocamos peças danificadas ou desgastadas por peças originais e compatíveis, garantindo o perfeito funcionamento do seu aquecedor.",
       icon: ThermometerSnowflake,
-      image: "https://images.unsplash.com/photo-1580901368919-7738efb0f87e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      image: "/lovable-uploads/031bbf85-b855-4e87-8aa3-a7b2ce56744e.png"
     },
   ];
   
