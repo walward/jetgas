@@ -52,7 +52,7 @@ const Testimonials = () => {
       .map((_, i) => (
         <Star
           key={i}
-          className={`h-5 w-5 ${
+          className={`h-4 w-4 sm:h-5 sm:w-5 ${
             i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
           }`}
         />
@@ -63,7 +63,7 @@ const Testimonials = () => {
 
   return (
     <section id="depoimentos" className="section-padding bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <h2 className="section-title uppercase">O QUE NOSSOS CLIENTES DIZEM</h2>
           <p className="section-subtitle">
@@ -76,7 +76,7 @@ const Testimonials = () => {
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star
                     key={star}
-                    className={`h-6 w-6 ${
+                    className={`h-5 w-5 sm:h-6 sm:w-6 ${
                       star <= Math.round(averageRating) 
                         ? "text-yellow-400 fill-yellow-400" 
                         : "text-gray-300"
@@ -93,22 +93,22 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-xl p-8 border border-gray-100 shadow-sm"
+              className="bg-gray-50 rounded-xl p-6 sm:p-8 border border-gray-100 shadow-sm"
             >
               <div className="flex justify-between items-center mb-4">
                 <div className="flex">{renderStars(review.rating)}</div>
               </div>
-              <p className="text-gray-700 mb-6 min-h-[80px]">"{review.content}"</p>
+              <p className="text-gray-700 mb-6 min-h-[80px] text-sm sm:text-base break-words">"{review.content}"</p>
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white text-xl font-bold">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold flex-shrink-0">
                   {review.name.charAt(0)}
                 </div>
                 <div className="ml-3">
-                  <div className="font-semibold">{review.name}</div>
+                  <div className="font-semibold text-sm sm:text-base">{review.name}</div>
                 </div>
               </div>
             </div>
@@ -117,7 +117,7 @@ const Testimonials = () => {
 
         <div className="mt-12 text-center">
           <a
-            href="https://wa.me/5511978025373?text=Olá,%20estou%20precisando%20de%20assistência%20técnica%20para%20meu%20aquecedor.%20Pode%20me%20ajudar?"
+            href="https://wa.me/5511978025373?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento.%20Pode%20me%20ajudar?"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary inline-flex items-center"

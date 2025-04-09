@@ -33,7 +33,7 @@ const Areas = () => {
 
   return (
     <section className="section-padding bg-accent">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <h2 className="section-title uppercase">ÁREAS DE ATENDIMENTO</h2>
           <p className="section-subtitle">
@@ -45,19 +45,19 @@ const Areas = () => {
           {regions.map((region, index) => (
             <div
               key={index}
-              className={`bg-white rounded-xl p-8 shadow-custom ${responsiveHoverClass}`}
+              className={`bg-white rounded-xl p-6 sm:p-8 shadow-custom ${responsiveHoverClass}`}
             >
               <div className="flex items-center mb-6">
-                <MapPin className="h-6 w-6 text-secondary mr-2" />
-                <h3 className="text-xl font-bold text-primary">
+                <MapPin className="h-6 w-6 text-secondary mr-2 flex-shrink-0" />
+                <h3 className="text-xl font-bold text-primary break-words">
                   {region.title}
                 </h3>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {region.neighborhoods.map((neighborhood, i) => (
                   <div key={i} className="flex items-center">
-                    <span className="h-1.5 w-1.5 rounded-full bg-secondary mr-2"></span>
-                    <span className="text-muted">{neighborhood}</span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-secondary mr-2 flex-shrink-0"></span>
+                    <span className="text-muted text-sm sm:text-base break-words">{neighborhood}</span>
                   </div>
                 ))}
               </div>

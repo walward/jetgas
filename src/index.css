@@ -107,6 +107,7 @@
     overscroll-behavior: none;
     touch-action: pan-y;
     -ms-touch-action: pan-y;
+    -webkit-text-size-adjust: 100%; /* Prevent text size adjust after orientation change on iOS */
   }
 }
 
@@ -151,6 +152,11 @@
   
   .card-hover {
     @apply transition-all duration-300 hover:shadow-custom-lg hover:-translate-y-2;
+  }
+  
+  /* Added class for better iPhone spacing */
+  .iphone-safe-container {
+    @apply px-4 sm:px-6 md:px-8;
   }
 }
 
