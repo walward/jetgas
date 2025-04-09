@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Star, Quote } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -60,7 +61,7 @@ const Testimonials = () => {
   };
 
   const getInitials = (name: string) => {
-    return name.charAt(0);
+    return name.split(' ')[0][0];
   };
 
   const googleReviewsUrl = "https://www.google.com/search?sca_esv=540de929b15f835b&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzYiPzx8gAwHPWCQefAmBY0Sy_JSU1qT3F4pv9JXQSYl9LZQ159ineDAbmZRgqPkPbXdQP9-yDy1gxCC8ER4eB400xrL2IIl9d4HDS1en1Bg_ZcDmPA%3D%3D&q=JetG%C3%A1s+Aquecedores+Coment%C3%A1rios&sa=X&ved=2ahUKEwjBqOrQu8mMAxVaOrkGHfFZOBYQ0bkNegQILBAE&biw=1396&bih=663&dpr=1.38";
@@ -101,14 +102,14 @@ const Testimonials = () => {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-xl p-6 sm:p-8 border border-gray-100 shadow-sm"
+              className="bg-gray-50 rounded-xl p-6 sm:p-8 border border-gray-100 shadow-sm flex flex-col h-full"
             >
               <div className="flex justify-between items-center mb-4">
                 <div className="flex">{renderStars(review.rating)}</div>
                 <Quote className="h-6 w-6 text-secondary opacity-60" />
               </div>
-              <p className="text-gray-700 mb-6 min-h-[80px] text-sm sm:text-base break-words">"{review.content}"</p>
-              <div className="flex items-center">
+              <p className="text-gray-700 mb-6 flex-grow text-sm sm:text-base break-words">"{review.content}"</p>
+              <div className="flex items-center mt-auto">
                 <Avatar className="w-10 h-10 sm:w-12 sm:h-12 text-white flex-shrink-0">
                   <AvatarFallback className="bg-primary text-lg sm:text-xl font-bold">
                     {getInitials(review.name)}
