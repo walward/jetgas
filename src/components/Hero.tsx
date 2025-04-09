@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
 const Hero = () => {
-  const defaultMessage = "Olá, estou precisando de assistência técnica para meu aquecedor. Pode me ajudar?";
+  const defaultMessage = "Olá, gostaria de solicitar um orçamento. Pode me ajudar?";
   const encodedMessage = encodeURIComponent(defaultMessage);
 
   const [formData, setFormData] = useState({

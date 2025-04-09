@@ -6,7 +6,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-  const defaultMessage = "Olá, estou precisando de assistência técnica para meu aquecedor. Pode me ajudar?";
+  const defaultMessage = "Olá, gostaria de solicitar um orçamento. Pode me ajudar?";
   const encodedMessage = encodeURIComponent(defaultMessage);
 
   useEffect(() => {
