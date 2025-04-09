@@ -134,7 +134,7 @@ const Testimonials = () => {
               />
             </div>
             <div className="md:w-2/3">
-              <h3 className="text-2xl font-bold text-primary mb-4 uppercase">CLIENTES SATISFEITOS EM TODO SÃO PAULO</h3>
+              <h3 className="text-2xl font-bold text-primary mb-4 uppercase">CLIENTES SATISFEITOS EM TODA SÃO PAULO</h3>
               <p className="text-gray-700 mb-6">
                 Nossos técnicos são reconhecidos pelo profissionalismo e qualidade em cada serviço. 
                 Trabalhamos com dedicação para garantir que cada cliente tenha uma experiência positiva 
