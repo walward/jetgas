@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Facebook, Instagram, Clock } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -150,8 +150,7 @@ const Footer = () => {
               <li className="text-white/80">
                 <strong className="text-white">CNPJ:</strong> 15.287.880.0001.04
               </li>
-              <li className="text-white/80 flex items-start mt-4">
-                <Clock className="h-5 w-5 text-white mr-2 flex-shrink-0 mt-0.5" />
+              <li className="text-white/80 mt-4">
                 <div>
                   <strong className="text-white block">Horário de Atendimento:</strong>
                   <p className="mt-1">Segunda a Sexta: 8h às 18h</p>

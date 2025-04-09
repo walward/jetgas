@@ -114,9 +114,10 @@
   }
   
   * {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
+    overflow-wrap: anywhere;
+    word-wrap: normal;
+    word-break: normal;
+    hyphens: none;
   }
 }
 
@@ -170,10 +171,12 @@
   }
   
   .mobile-text-wrap {
-    @apply break-words hyphens-auto;
+    @apply whitespace-normal break-normal;
     max-width: 100%;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    word-wrap: normal;
+    word-break: normal;
+    hyphens: none;
   }
   
   /* Add animation for images */

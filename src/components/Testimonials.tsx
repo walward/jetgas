@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Star, Quote } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -61,10 +60,7 @@ const Testimonials = () => {
   };
 
   const getInitials = (name: string) => {
-    return name
-      .split(' ')
-      .map(part => part.charAt(0))
-      .join('');
+    return name.charAt(0);
   };
 
   const googleReviewsUrl = "https://www.google.com/search?sca_esv=540de929b15f835b&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzYiPzx8gAwHPWCQefAmBY0Sy_JSU1qT3F4pv9JXQSYl9LZQ159ineDAbmZRgqPkPbXdQP9-yDy1gxCC8ER4eB400xrL2IIl9d4HDS1en1Bg_ZcDmPA%3D%3D&q=JetG%C3%A1s+Aquecedores+Coment%C3%A1rios&sa=X&ved=2ahUKEwjBqOrQu8mMAxVaOrkGHfFZOBYQ0bkNegQILBAE&biw=1396&bih=663&dpr=1.38";
@@ -131,7 +127,7 @@ const Testimonials = () => {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/3">
               <img 
-                src="/lovable-uploads/b238cb41-6e15-4c6c-9884-1bf2ea91b09b.png" 
+                src="/lovable-uploads/dfa2d1ab-d9b5-4a7e-b0d3-d1fc8b3911a0.png" 
                 alt="Cliente satisfeito" 
                 className="rounded-lg shadow-md w-full h-auto"
               />
