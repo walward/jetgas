@@ -38,19 +38,19 @@ const Hero = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0xLjEuOS0yIDItMmgxMmExIDEgMCAwIDEgMCAySDM4YTIgMiAwIDAgMS0yLTJtMC0xMmMwLTEuMS45LTIgMi0yaDEyYTEgMSAwIDAgMSAwIDJIMzhhMiAyIDAgMCAxLTItMm0tMTIgMGMwLTEuMS45LTIgMi0yaDEyYTEgMSAwIDAgMSAwIDJIMjZhMiAyIDAgMCAxLTItMm0wIDEyYzAtMS4xLjktMiAyLTJoMTJhMSAxIDAgMCAxIDAgMkgyNmEyIDIgMCAwIDEtMi0yIi8+PC9nPjwvZz48L3N2Zz4=')] opacity-10"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto iphone-safe-container relative z-10">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <div className="md:w-1/2 mb-10 md:mb-0 text-white">
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-              <span className="text-white font-semibold whitespace-nowrap">
+              <span className="text-white font-semibold whitespace-normal sm:whitespace-nowrap mobile-text-wrap">
                 Mais de 20 anos atendendo com excelência
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 uppercase">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 uppercase mobile-text-wrap">
               MANUTENÇÃO DE AQUECEDORES COM{" "}
               <span className="text-secondary">SEGURANÇA E QUALIDADE</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-lg">
+            <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-lg mobile-text-wrap">
               Especialistas em manutenção, instalação e conserto de aquecedores das principais marcas com atendimento rápido e eficiente.
             </p>
 
@@ -61,30 +61,30 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="btn-secondary flex items-center justify-center gap-2 text-lg"
               >
-                <span>Solicitar orçamento</span>
-                <ArrowRight className="h-5 w-5" />
+                <span className="mobile-text-wrap">Solicitar orçamento</span>
+                <ArrowRight className="h-5 w-5 flex-shrink-0" />
               </a>
               <a href="#servicos" className="btn-primary bg-white/20 hover:bg-white/30 text-lg">
-                Ver serviços
+                <span className="mobile-text-wrap">Ver serviços</span>
               </a>
             </div>
 
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex items-center">
-                <CheckCircle className="h-6 w-6 text-secondary mr-2" />
-                <span className="text-white font-medium">Assistência técnica especializada</span>
+                <CheckCircle className="h-6 w-6 text-secondary mr-2 flex-shrink-0" />
+                <span className="text-white font-medium mobile-text-wrap">Assistência técnica especializada</span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="h-6 w-6 text-secondary mr-2" />
-                <span className="text-white font-medium">Técnicos certificados</span>
+                <CheckCircle className="h-6 w-6 text-secondary mr-2 flex-shrink-0" />
+                <span className="text-white font-medium mobile-text-wrap">Técnicos certificados</span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="h-6 w-6 text-secondary mr-2" />
-                <span className="text-white font-medium">Garantia nos serviços</span>
+                <CheckCircle className="h-6 w-6 text-secondary mr-2 flex-shrink-0" />
+                <span className="text-white font-medium mobile-text-wrap">Garantia nos serviços</span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="h-6 w-6 text-secondary mr-2" />
-                <span className="text-white font-medium">Peças originais</span>
+                <CheckCircle className="h-6 w-6 text-secondary mr-2 flex-shrink-0" />
+                <span className="text-white font-medium mobile-text-wrap">Peças originais</span>
               </div>
             </div>
           </div>

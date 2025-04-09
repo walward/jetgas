@@ -13,30 +13,43 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import TextOverride from "@/components/TextOverride";
 
 const Index = () => {
-  // Update touch handling to be less aggressive
+  // Update touch handling and viewport settings for mobile
   useEffect(() => {
-    // We're intentionally not adding touch handlers that could interfere with scrolling
-    // The issue was coming from hover effects that are now disabled on mobile
-    
-    // Update viewport meta tag to handle iPhone display properly
+    // Set viewport meta tag for proper iOS display
     const viewportMeta = document.querySelector('meta[name="viewport"]');
     if (viewportMeta) {
-      viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0, viewport-fit=cover');
+      viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0');
     } else {
       const meta = document.createElement('meta');
       meta.name = 'viewport';
-      meta.content = 'width=device-width, initial-scale=1.0, viewport-fit=cover';
+      meta.content = 'width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0';
       document.getElementsByTagName('head')[0].appendChild(meta);
     }
     
-    // Update overflow styles to prevent horizontal scrolling only
+    // Add viewport-fit meta tag for iOS notches
+    if (!document.querySelector('meta[name="viewport-fit"]')) {
+      const viewportFitMeta = document.createElement('meta');
+      viewportFitMeta.name = 'viewport-fit';
+      viewportFitMeta.content = 'cover';
+      document.getElementsByTagName('head')[0].appendChild(viewportFitMeta);
+    }
+    
+    // Update overflow styles to prevent horizontal scrolling
     document.body.style.overflowX = "hidden";
     document.documentElement.style.overflowX = "hidden";
+    document.body.style.width = "100%";
+    document.documentElement.style.width = "100%";
+    document.body.style.position = "relative";
+    document.documentElement.style.position = "relative";
     
     return () => {
       // Reset styles when component unmounts
       document.body.style.overflowX = "";
       document.documentElement.style.overflowX = "";
+      document.body.style.width = "";
+      document.documentElement.style.width = "";
+      document.body.style.position = "";
+      document.documentElement.style.position = "";
     };
   }, []);
 

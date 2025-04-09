@@ -71,7 +71,7 @@ Mensagem: ${formData.mensagem}`;
 
   return (
     <section id="contato" className="section-padding bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto iphone-safe-container">
         <div className="text-center mb-16">
           <h2 className="section-title uppercase">Entre em Contato</h2>
           <p className="section-subtitle">
@@ -88,51 +88,53 @@ Mensagem: ${formData.mensagem}`;
 
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-primary rounded-full p-3 mr-4">
+                  <div className="bg-primary rounded-full p-3 mr-4 flex-shrink-0">
                     <Phone className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <p className="font-semibold text-primary mb-1">Telefone</p>
-                    <p className="text-muted">(11) 3461-8215</p>
-                    <p className="text-muted">(11) 97802-5373 (WhatsApp)</p>
+                    <p className="text-muted mobile-text-wrap">(11) 3461-8215</p>
+                    <p className="text-muted mobile-text-wrap">(11) 97802-5373 (WhatsApp)</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-primary rounded-full p-3 mr-4">
+                  <div className="bg-primary rounded-full p-3 mr-4 flex-shrink-0">
                     <Mail className="h-5 w-5 text-white" />
                   </div>
-                  <div>
+                  <div className="w-full">
                     <p className="font-semibold text-primary mb-1">Email</p>
-                    <p className="text-muted">contatojetgasaquecedores@gmail.com</p>
+                    <p className="text-muted mobile-text-wrap text-sm sm:text-base break-all">
+                      contatojetgasaquecedores@gmail.com
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-primary rounded-full p-3 mr-4">
+                  <div className="bg-primary rounded-full p-3 mr-4 flex-shrink-0">
                     <Clock className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <p className="font-semibold text-primary mb-1">Horário de Atendimento</p>
-                    <p className="text-muted">
+                    <p className="text-muted mobile-text-wrap">
                       Segunda a Sexta: 8h às 18h
                     </p>
-                    <p className="text-muted">
+                    <p className="text-muted mobile-text-wrap">
                       Sábados: 8h às 12h
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-primary rounded-full p-3 mr-4">
+                  <div className="bg-primary rounded-full p-3 mr-4 flex-shrink-0">
                     <MapPin className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <p className="font-semibold text-primary mb-1">Endereço</p>
-                    <p className="text-muted">
+                    <p className="text-muted mobile-text-wrap">
                       Av. Dória, 265 - Vila Alexandria
                     </p>
-                    <p className="text-muted">
+                    <p className="text-muted mobile-text-wrap">
                       São Paulo - SP, CEP: 04635-070
                     </p>
                   </div>

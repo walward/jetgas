@@ -33,7 +33,7 @@ const Areas = () => {
 
   return (
     <section className="section-padding bg-accent">
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto iphone-safe-container">
         <div className="text-center mb-16">
           <h2 className="section-title uppercase">ÁREAS DE ATENDIMENTO</h2>
           <p className="section-subtitle">
@@ -49,7 +49,7 @@ const Areas = () => {
             >
               <div className="flex items-center mb-6">
                 <MapPin className="h-6 w-6 text-secondary mr-2 flex-shrink-0" />
-                <h3 className="text-xl font-bold text-primary break-words">
+                <h3 className="text-xl font-bold text-primary mobile-text-wrap">
                   {region.title}
                 </h3>
               </div>
@@ -57,7 +57,7 @@ const Areas = () => {
                 {region.neighborhoods.map((neighborhood, i) => (
                   <div key={i} className="flex items-center">
                     <span className="h-1.5 w-1.5 rounded-full bg-secondary mr-2 flex-shrink-0"></span>
-                    <span className="text-muted text-sm sm:text-base break-words">{neighborhood}</span>
+                    <span className="text-muted text-sm sm:text-base mobile-text-wrap">{neighborhood}</span>
                   </div>
                 ))}
               </div>
@@ -66,7 +66,7 @@ const Areas = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-muted mb-6">
+          <p className="text-muted mb-6 mobile-text-wrap">
             Não encontrou sua região? Entre em contato para verificar disponibilidade
           </p>
           <a
