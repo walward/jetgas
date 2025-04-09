@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -173,5 +174,35 @@
     max-width: 100%;
     overflow-wrap: break-word;
     word-wrap: break-word;
+  }
+  
+  /* Add animation for images */
+  .image-fade-in {
+    @apply opacity-0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Add styles for image with overlay */
+  .image-overlay {
+    @apply relative overflow-hidden;
+  }
+  
+  .image-overlay::after {
+    content: '';
+    @apply absolute inset-0 bg-primary bg-opacity-30 transition-opacity duration-300;
+  }
+  
+  .image-overlay:hover::after {
+    @apply bg-opacity-10;
+  }
+  
+  /* Add styles for testimonial quotes */
+  .quote-mark {
+    @apply text-secondary opacity-25 text-6xl absolute -top-2 -left-2 font-serif;
   }
 }

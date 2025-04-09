@@ -1,11 +1,12 @@
 
 import React from "react";
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 interface Review {
   name: string;
   rating: number;
   content: string;
+  avatar?: string;
 }
 
 const Testimonials = () => {
@@ -15,31 +16,37 @@ const Testimonials = () => {
       name: "Sandra L. F.",
       rating: 5,
       content: "Fui muito bem atendida tanto pela Camila, com quem solicitei informações e fiz agendamento, quanto pelo Sr. José Felipe, que fez o conserto do meu aquecedor. Ótimo trabalho, já sou cliente há muitos anos, recomendo!",
+      avatar: "https://randomuser.me/api/portraits/women/44.jpg"
     },
     {
       name: "Jeferson O.",
       rating: 5,
       content: "Um trabalho excelente gostei muito do atendimento, super educados, profissionais, fizeram o serviço deixaram tudo limpinho, foi uma indicação, e eu recomendo, ótimo trabalho.",
+      avatar: "https://randomuser.me/api/portraits/men/54.jpg"
     },
     {
       name: "João Roberto dos S. P.",
       rating: 5,
       content: "Tenho um Aquecedor Alemão Junkers há 20 anos, sempre faço manutenção com essa empresa. Hoje fiz manutenção e troca de válvula de gás e a retirada do Aquecedor para levar para outro imóvel com o técnico José Edinaldo Brandão, que fez um serviço perfeito.",
+      avatar: "https://randomuser.me/api/portraits/men/43.jpg"
     },
     {
       name: "Vanessa C.",
       rating: 5,
       content: "Excelente atendimento. Prestativos, atenciosos e rapidos, além do custo ser justo.",
+      avatar: "https://randomuser.me/api/portraits/women/17.jpg"
     },
     {
       name: "Paulo A.",
       rating: 5,
       content: "Rápido e eficiente atendimento. Não é o mais em conta, mas, transmite segurança/conhecimento e garantia.",
+      avatar: "https://randomuser.me/api/portraits/men/67.jpg"
     },
     {
       name: "Danilo D.",
       rating: 5,
       content: "Liguei para os serviços na noite e já no dia seguinte foi executado. Top, pessoal sério e profissional, custo benefício correto.",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg"
     },
   ];
 
@@ -101,43 +108,70 @@ const Testimonials = () => {
             >
               <div className="flex justify-between items-center mb-4">
                 <div className="flex">{renderStars(review.rating)}</div>
+                <Quote className="h-6 w-6 text-secondary opacity-60" />
               </div>
               <p className="text-gray-700 mb-6 min-h-[80px] text-sm sm:text-base break-words">"{review.content}"</p>
               <div className="flex items-center">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold flex-shrink-0">
-                  {review.name.charAt(0)}
-                </div>
+                {review.avatar ? (
+                  <img 
+                    src={review.avatar} 
+                    alt={review.name}
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover flex-shrink-0"
+                  />
+                ) : (
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold flex-shrink-0">
+                    {review.name.charAt(0)}
+                  </div>
+                )}
                 <div className="ml-3">
                   <div className="font-semibold text-sm sm:text-base">{review.name}</div>
+                  <div className="text-xs text-gray-500">Cliente verificado</div>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <a
-            href="https://wa.me/5511978025373?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento.%20Pode%20me%20ajudar?"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary inline-flex items-center"
-          >
-            <span>Seja o próximo cliente satisfeito</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
+        <div className="mt-16 p-8 bg-gray-50 rounded-xl border border-gray-100">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-1/3">
+              <img 
+                src="https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                alt="Cliente satisfeito" 
+                className="rounded-lg shadow-md w-full h-auto"
               />
-            </svg>
-          </a>
+            </div>
+            <div className="md:w-2/3">
+              <h3 className="text-2xl font-bold text-primary mb-4">Clientes Satisfeitos em Todo São Paulo</h3>
+              <p className="text-gray-700 mb-6">
+                Nossos técnicos são reconhecidos pelo profissionalismo e qualidade em cada serviço. 
+                Trabalhamos com dedicação para garantir que cada cliente tenha uma experiência positiva 
+                e recomende nossos serviços.
+              </p>
+              <a
+                href="https://wa.me/5511978025373?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento.%20Pode%20me%20ajudar?"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex items-center"
+              >
+                <span>Seja o próximo cliente satisfeito</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -19,36 +19,42 @@ const Services = () => {
       description:
         "Evite surpresas! Realizamos a manutenção preventiva do seu aquecedor para garantir o bom funcionamento e prolongar a vida útil.",
       icon: Flame,
+      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Conserto e Reparo",
       description:
         "Aquecedor com defeito? Nossa equipe está pronta para diagnosticar e reparar qualquer problema, com peças de qualidade e garantia.",
       icon: Wrench,
+      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Instalação de Aquecedores",
       description:
         "Instalação segura e eficiente de aquecedores de todas as marcas e modelos, seguindo as normas técnicas e garantindo a sua segurança.",
       icon: ShieldCheck,
+      image: "https://images.unsplash.com/photo-1581092921461-39b99d000440?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Regulagem de Temperatura",
       description:
         "Ajuste preciso da temperatura do seu aquecedor para garantir o máximo de conforto e economia, evitando o desperdício de gás e energia.",
       icon: Settings,
+      image: "https://images.unsplash.com/photo-1527576539890-dfa815648363?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Limpeza e Descontaminação",
       description:
         "Removemos sujeiras, impurezas e resíduos que podem comprometer o desempenho do seu aquecedor, garantindo a qualidade da água e a sua saúde.",
       icon: Fan,
+      image: "https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Substituição de Peças",
       description:
         "Trocamos peças danificadas ou desgastadas por peças originais e compatíveis, garantindo o perfeito funcionamento do seu aquecedor.",
       icon: ThermometerSnowflake,
+      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
   ];
   
@@ -95,15 +101,71 @@ const Services = () => {
           {serviceCards.map((card, index) => (
             <div
               key={index}
-              className={`bg-gray-50 rounded-xl p-6 border border-gray-100 shadow-sm ${responsiveHoverClass}`}
+              className={`bg-gray-50 rounded-xl overflow-hidden border border-gray-100 shadow-sm ${responsiveHoverClass}`}
             >
-              <div className="mb-4">
-                <card.icon className="h-8 w-8 text-primary mb-2" />
-                <h3 className="text-xl font-bold text-primary mb-2">{card.title}</h3>
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={card.image} 
+                  alt={card.title} 
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
               </div>
-              <p className="text-gray-700">{card.description}</p>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <card.icon className="h-8 w-8 text-primary mr-3 flex-shrink-0" />
+                  <h3 className="text-xl font-bold text-primary">{card.title}</h3>
+                </div>
+                <p className="text-gray-700">{card.description}</p>
+              </div>
             </div>
           ))}
+        </div>
+
+        <div className="bg-gray-50 rounded-xl p-8 mb-16">
+          <div className="flex flex-col lg:flex-row items-center gap-8">
+            <div className="lg:w-1/2">
+              <img 
+                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80" 
+                alt="Equipe especializada" 
+                className="rounded-lg shadow-md w-full h-auto"
+              />
+            </div>
+            <div className="lg:w-1/2">
+              <h3 className="text-3xl font-bold text-primary mb-4">
+                Nossa Equipe Especializada
+              </h3>
+              <p className="text-lg text-gray-700 mb-6">
+                Contamos com técnicos altamente qualificados e certificados, com vasta experiência 
+                em manutenção e instalação de aquecedores das principais marcas do mercado.
+              </p>
+              <p className="text-lg text-gray-700 mb-8">
+                Todo nosso time passa por treinamentos constantes para garantir o 
+                melhor serviço e atendimento aos nossos clientes.
+              </p>
+              <a
+                href="https://wa.me/5511978025373?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20equipe%20de%20técnicos.%20Pode%20me%20ajudar?"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center"
+              >
+                <span>Conheça nossa equipe</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="mt-20">

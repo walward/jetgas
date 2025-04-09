@@ -42,6 +42,15 @@ const Index = () => {
     document.body.style.position = "relative";
     document.documentElement.style.position = "relative";
     
+    // Force a layout recalculation after a slight delay to fix any iOS rendering issues
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.body.style.display = "none";
+      // This forces a layout recalculation
+      void document.body.offsetHeight;
+      document.body.style.display = "";
+    }, 50);
+    
     return () => {
       // Reset styles when component unmounts
       document.body.style.overflowX = "";
