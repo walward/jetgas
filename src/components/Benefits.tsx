@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Clock, Award, BadgeCheck, Wrench, Zap, CalendarClock } from "lucide-react";
+import { responsiveHoverClass } from "@/hooks/use-mobile";
 
 const Benefits = () => {
   const benefits = [
@@ -53,7 +54,7 @@ const Benefits = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-primary-light rounded-xl p-8 transition-all duration-300 hover:shadow-custom-lg hover:bg-secondary border border-white/10"
+              className={`bg-primary-light rounded-xl p-8 transition-all duration-300 hover:bg-secondary border border-white/10`}
             >
               <div className="bg-secondary/20 p-4 rounded-full inline-block mb-6">
                 {benefit.icon}

@@ -1,3 +1,4 @@
+
 import * as React from "react"
 
 const MOBILE_BREAKPOINT = 768
@@ -17,3 +18,6 @@ export function useIsMobile() {
 
   return !!isMobile
 }
+
+// Add a CSS class to handle responsive hover effects
+export const responsiveHoverClass = "md:hover:shadow-custom-lg md:hover:-translate-y-2 transition-all duration-300"

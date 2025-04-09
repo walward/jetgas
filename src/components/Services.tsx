@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Flame, Wrench, ShieldCheck, Settings, Fan, ThermometerSnowflake, ChevronLeft, ChevronRight } from "lucide-react";
+import { Flame, Wrench, ShieldCheck, Settings, Fan, ThermometerSnowflake } from "lucide-react";
 import { 
   Carousel, 
   CarouselContent, 
@@ -9,6 +9,7 @@ import {
   CarouselNext
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { responsiveHoverClass } from "@/hooks/use-mobile";
 
 const Services = () => {
   // Dados dos cards de serviço
@@ -94,7 +95,7 @@ const Services = () => {
           {serviceCards.map((card, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-xl p-6 border border-gray-100 shadow-sm card-hover"
+              className={`bg-gray-50 rounded-xl p-6 border border-gray-100 shadow-sm ${responsiveHoverClass}`}
             >
               <div className="mb-4">
                 <card.icon className="h-8 w-8 text-primary mb-2" />

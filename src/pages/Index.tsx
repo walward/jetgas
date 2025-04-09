@@ -12,30 +12,19 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
-  // Prevent horizontal scrolling on mobile
+  // Update touch handling to be less aggressive
   useEffect(() => {
-    let touchStartX = 0;
+    // We're intentionally not adding touch handlers that could interfere with scrolling
+    // The issue was coming from hover effects that are now disabled on mobile
     
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartX = e.touches[0].clientX;
-    };
-    
-    const handleTouchMove = (e: TouchEvent) => {
-      const touchEndX = e.touches[0].clientX;
-      const diffX = touchStartX - touchEndX;
-      
-      // If horizontal scroll detected and page has horizontal overflow
-      if (Math.abs(diffX) > Math.abs(window.innerWidth - document.documentElement.clientWidth)) {
-        e.preventDefault();
-      }
-    };
-
-    document.addEventListener('touchstart', handleTouchStart, { passive: true });
-    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    // Update overflow styles to prevent horizontal scrolling only
+    document.body.style.overflowX = "hidden";
+    document.documentElement.style.overflowX = "hidden";
     
     return () => {
-      document.removeEventListener('touchstart', handleTouchStart);
-      document.removeEventListener('touchmove', handleTouchMove);
+      // Reset styles when component unmounts
+      document.body.style.overflowX = "";
+      document.documentElement.style.overflowX = "";
     };
   }, []);
 

@@ -1,6 +1,7 @@
 
 import React from "react";
 import { MapPin } from "lucide-react";
+import { responsiveHoverClass } from "@/hooks/use-mobile";
 
 const Areas = () => {
   const regions = [
@@ -44,7 +45,7 @@ const Areas = () => {
           {regions.map((region, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-8 shadow-custom card-hover"
+              className={`bg-white rounded-xl p-8 shadow-custom ${responsiveHoverClass}`}
             >
               <div className="flex items-center mb-6">
                 <MapPin className="h-6 w-6 text-secondary mr-2" />
@@ -69,7 +70,7 @@ const Areas = () => {
             Não encontrou sua região? Entre em contato para verificar disponibilidade
           </p>
           <a
-            href="https://wa.me/5511978025373?text=Olá,%20estou%20precisando%20de%20assistência%20técnica%20para%20meu%20aquecedor.%20Pode%20me%20ajudar?"
+            href="https://wa.me/5511978025373?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento.%20Pode%20me%20ajudar?"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-flex items-center"
