@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Flame, Wrench, ShieldCheck, Settings, Fan, ThermometerSnowflake } from "lucide-react";
 import { 
@@ -18,42 +19,42 @@ const Services = () => {
       description:
         "Evite surpresas! Realizamos a manutenção preventiva do seu aquecedor para garantir o bom funcionamento e prolongar a vida útil.",
       icon: Flame,
-      image: "/lovable-uploads/808cd2c7-d041-4a8a-94c5-cea00b94af81.png"
+      image: "/lovable-uploads/5ff172d4-d8b1-4500-bc4e-ce7ad8233a6e.png" // Imagem 1
     },
     {
       title: "Conserto e Reparo",
       description:
         "Aquecedor com defeito? Nossa equipe está pronta para diagnosticar e reparar qualquer problema, com peças de qualidade e garantia.",
       icon: Wrench,
-      image: "/lovable-uploads/bcf45499-94c2-404e-9f3d-e68cf261f0ed.png"
+      image: "/lovable-uploads/db9b8f18-2b5d-4b2a-921b-8ffb1b26e3f9.png" // Imagem 2
     },
     {
       title: "Instalação de Aquecedores",
       description:
         "Instalação segura e eficiente de aquecedores de todas as marcas e modelos, seguindo as normas técnicas e garantindo a sua segurança.",
       icon: ShieldCheck,
-      image: "/lovable-uploads/35088dc9-3f5e-4adb-982c-58cc91b06bf7.png"
+      image: "/lovable-uploads/4cbb1e2a-cd2b-41fe-bc7a-841586c5551d.png" // Imagem 3
     },
     {
       title: "Regulagem de Temperatura",
       description:
         "Ajuste preciso da temperatura do seu aquecedor para garantir o máximo de conforto e economia, evitando o desperdício de gás e energia.",
       icon: Settings,
-      image: "/lovable-uploads/e727de36-b9e1-4595-9175-011ebe3a3e71.png"
+      image: "/lovable-uploads/f234b90f-90d2-4592-a780-56a30a1b830e.png" // Imagem 4
     },
     {
       title: "Limpeza e Descontaminação",
       description:
         "Removemos sujeiras, impurezas e resíduos que podem comprometer o desempenho do seu aquecedor, garantindo a qualidade da água e a sua saúde.",
       icon: Fan,
-      image: "/lovable-uploads/dd0fe5b0-1e17-476a-881f-33ca3683a972.png"
+      image: "/lovable-uploads/7eec998c-c347-4e54-945d-1e00c28deb69.png" // Imagem 5
     },
     {
       title: "Substituição de Peças",
       description:
         "Trocamos peças danificadas ou desgastadas por peças originais e compatíveis, garantindo o perfeito funcionamento do seu aquecedor.",
       icon: ThermometerSnowflake,
-      image: "/lovable-uploads/031bbf85-b855-4e87-8aa3-a7b2ce56744e.png"
+      image: "/lovable-uploads/644aa38a-feed-442d-b099-9abbfbe97db0.png" // Imagem 6
     },
   ];
   
@@ -107,6 +108,7 @@ const Services = () => {
                   src={card.image} 
                   alt={card.title} 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  loading="lazy"
                 />
               </div>
               <div className="p-6">
@@ -124,9 +126,10 @@ const Services = () => {
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="lg:w-1/2">
               <img 
-                src="/lovable-uploads/c176a826-7c05-4006-b1b8-8b5a4c92faec.png" 
+                src="/lovable-uploads/bd9515eb-c83e-409a-bdd1-8635007000f4.png" 
                 alt="Técnico especializado em manutenção de aquecedores" 
                 className="rounded-lg shadow-md w-full h-auto"
+                loading="lazy"
               />
             </div>
             <div className="lg:w-1/2">
@@ -200,6 +203,7 @@ const Services = () => {
                       src={brand.logo}
                       alt={`Logo ${brand.name}`}
                       className="h-16 w-auto object-contain max-w-full grayscale hover:grayscale-0 transition-all mx-auto"
+                      loading="lazy"
                     />
                   </CarouselItem>
                 ))}
