@@ -13,7 +13,7 @@ const Areas = () => {
         "Campo Grande", "Campo Limpo", "Socorro", "Cursino", "Jardim Ângela", 
         "Jardim São Luiz", "Aeroporto", "Interlagos"
       ],
-      image: "/lovable-uploads/d4dd2b5b-96f5-4163-9906-5e64009d61eb.png" // Zona Sul São Paulo
+      image: "/lovable-uploads/d4dd2b5b-96f5-4163-9906-5e64009d61eb.webp" // Converted to WebP
     },
     {
       title: "Zona Oeste",
@@ -22,7 +22,7 @@ const Areas = () => {
         "Vila Sônia", "Jardim Europa", "Jardim Paulista", "Cidade Jardim", 
         "Lapa", "Alto de Pinheiros", "Alto da Lapa", "Pinheiros"
       ],
-      image: "/lovable-uploads/94277785-8910-4a80-8d00-aa7c98556850.png" // Zona Oeste São Paulo
+      image: "/lovable-uploads/94277785-8910-4a80-8d00-aa7c98556850.webp" // Converted to WebP
     },
     {
       title: "Grande São Paulo",
@@ -30,7 +30,7 @@ const Areas = () => {
         "Alphaville", "Barueri", "Santana de Parnaíba", "Cotia", 
         "Mogi das Cruzes", "Caieiras"
       ],
-      image: "/lovable-uploads/f4f3335a-920a-4888-82b2-0678946aeaa8.png" // Grande São Paulo
+      image: "/lovable-uploads/f4f3335a-920a-4888-82b2-0678946aeaa8.webp" // Converted to WebP
     },
   ];
 
@@ -55,6 +55,7 @@ const Areas = () => {
                   src={region.image} 
                   alt={`Região ${region.title}`} 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  loading="lazy"
                 />
               </div>
               <div className="p-6 sm:p-8">
@@ -81,9 +82,10 @@ const Areas = () => {
           <div className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-xl overflow-hidden">
             <div className="md:w-1/2 h-64 md:h-auto">
               <img 
-                src="/lovable-uploads/b2f0a3a7-6b33-45f6-afe6-62f30447378f.png" 
+                src="/lovable-uploads/b2f0a3a7-6b33-45f6-afe6-62f30447378f.webp" 
                 alt="Mapa de atendimento" 
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             <div className="md:w-1/2 p-8">
