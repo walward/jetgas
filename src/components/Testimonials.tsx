@@ -128,9 +128,10 @@ const Testimonials = () => {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
               <img 
-                src="/lovable-uploads/ff13287f-3cc4-4496-b9c9-a58a5af7d263.png" 
+                src="/lovable-uploads/1c686cfc-1a9f-4af9-bca1-d8ec2557f909.png" 
                 alt="Cliente satisfeito" 
                 className="rounded-lg shadow-md w-full h-auto"
+                loading="lazy"
               />
             </div>
             <div className="md:w-1/2">
