@@ -87,7 +87,7 @@ const Areas = () => {
               />
             </div>
             <div className="md:w-1/2 p-8">
-              <h3 className="text-2xl font-bold text-primary mb-4">Atendimento Amplo</h3>
+              <h3 className="text-2xl font-bold text-primary mb-4 uppercase">ATENDIMENTO AMPLO</h3>
               <p className="text-muted mb-6">
                 Nossa equipe de técnicos especializados está estrategicamente distribuída
                 pela cidade de São Paulo e região, garantindo um atendimento rápido e eficiente
