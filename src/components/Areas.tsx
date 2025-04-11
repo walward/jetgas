@@ -53,12 +53,8 @@ const Areas = () => {
               <div className="h-48 overflow-hidden">
                 <img 
                   src={region.image} 
-                  alt={`Região ${region.title}`}
+                  alt={`Região ${region.title}`} 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  loading="lazy"
-                  decoding="async"
-                  width="400"
-                  height="300"
                 />
               </div>
               <div className="p-6 sm:p-8">
@@ -88,10 +84,6 @@ const Areas = () => {
                 src="/lovable-uploads/b2f0a3a7-6b33-45f6-afe6-62f30447378f.webp" 
                 alt="Mapa de atendimento" 
                 className="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="400"
               />
             </div>
             <div className="md:w-1/2 p-8">
