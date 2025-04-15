@@ -90,6 +90,15 @@ const Footer = () => {
                   className="text-white/80 hover:text-white transition-colors flex items-center"
                 >
                   <span className="mr-2">→</span>
+                  Conserto e Reparo
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#servicos"
+                  className="text-white/80 hover:text-white transition-colors flex items-center"
+                >
+                  <span className="mr-2">→</span>
                   Manutenção Preventiva
                 </a>
               </li>
@@ -99,16 +108,7 @@ const Footer = () => {
                   className="text-white/80 hover:text-white transition-colors flex items-center"
                 >
                   <span className="mr-2">→</span>
-                  Reparo de Aquecedores
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#servicos"
-                  className="text-white/80 hover:text-white transition-colors flex items-center"
-                >
-                  <span className="mr-2">→</span>
-                  Manutenção de Aquecedores
+                  Instalação de Aquecedores
                 </a>
               </li>
               <li>

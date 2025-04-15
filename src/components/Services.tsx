@@ -15,13 +15,6 @@ const Services = () => {
   // Dados dos cards de serviço
   const serviceCards = [
     {
-      title: "Manutenção Preventiva",
-      description:
-        "Evite surpresas! Realizamos a manutenção preventiva do seu aquecedor para garantir o bom funcionamento e prolongar a vida útil.",
-      icon: Flame,
-      image: "/lovable-uploads/5ff172d4-d8b1-4500-bc4e-ce7ad8233a6e.png" // Imagem 1
-    },
-    {
       title: "Conserto e Reparo",
       description:
         "Aquecedor com defeito? Nossa equipe está pronta para diagnosticar e reparar qualquer problema, com peças de qualidade e garantia.",
@@ -29,9 +22,16 @@ const Services = () => {
       image: "/lovable-uploads/db9b8f18-2b5d-4b2a-921b-8ffb1b26e3f9.png" // Imagem 2
     },
     {
+      title: "Manutenção Preventiva",
+      description:
+        "Evite surpresas! Realizamos a manutenção preventiva do seu aquecedor para garantir o bom funcionamento e prolongar a vida útil.",
+      icon: Flame,
+      image: "/lovable-uploads/5ff172d4-d8b1-4500-bc4e-ce7ad8233a6e.png" // Imagem 1
+    },
+    {
       title: "Instalação de Aquecedores",
       description:
-        "Instalação segura e eficiente de aquecedores de todas as marcas e modelos, seguindo as normas técnicas e garantindo a sua segurança.",
+        "Instalação segura e eficiente de aquecedores das principais marcas e modelos, seguindo as normas técnicas e garantindo a sua segurança.",
       icon: ShieldCheck,
       image: "/lovable-uploads/4cbb1e2a-cd2b-41fe-bc7a-841586c5551d.png" // Imagem 3
     },
@@ -58,19 +58,19 @@ const Services = () => {
     },
   ];
   
-  // Dados das marcas de aquecedores
+  // Dados das marcas de aquecedores com novos logos
   const brands = [
-    {name: "Rinnai", logo: "/lovable-uploads/fe2c375d-66c1-49e4-926e-03917769e4c0.png"},
-    {name: "Bosch", logo: "/lovable-uploads/0fa806b9-9b40-4faf-903f-a648c9536f8f.png"},
-    {name: "Komeco", logo: "/lovable-uploads/75699ea2-9a73-41d4-9bd5-98d40c85304f.png"},
-    {name: "Lorenzetti", logo: "/lovable-uploads/3b9e7037-08d2-43ad-98a6-e2c267c81ac8.png"},
-    {name: "Orbis", logo: "/lovable-uploads/f8d50a30-8de6-4d12-a1a8-6824a903d549.png"},
-    {name: "Rheem", logo: "/lovable-uploads/07804fa2-a3c4-4afa-8e30-0d1257054e8f.png"},
-    {name: "Cumulus", logo: "/lovable-uploads/87207c08-bff1-463e-aa35-b51790cf768b.png"},
-    {name: "Inova", logo: "/lovable-uploads/061254c6-8865-4bc2-b722-35f507b1f455.png"},
+    {name: "Rinnai", logo: "/lovable-uploads/d7331609-baf6-440e-a3f8-a8f14d090e1c.png"},
+    {name: "Bosch", logo: "/lovable-uploads/05fa389d-b4b3-47f6-9e1b-31ce242a20c2.png"},
+    {name: "Komeco", logo: "/lovable-uploads/79a8b4b7-ed6f-4413-8aa1-1e9506b1219f.png"},
+    {name: "Lorenzetti", logo: "/lovable-uploads/eabbf1e4-1ab5-4a2c-8870-b4734dbddfe2.png"},
+    {name: "Orbis", logo: "/lovable-uploads/fbdc53ae-6c82-42f9-88ac-9bdcab958ec9.png"},
+    {name: "Rheem", logo: "/lovable-uploads/cee91c7c-5e0c-4c5c-b940-82c3181ca8af.png"},
+    {name: "Cumulus", logo: "/lovable-uploads/8dc6066c-d082-48d5-aa5d-4896bd451377.png"},
+    {name: "Inova", logo: "/lovable-uploads/a1c5ec1c-f171-45b1-b25f-0918a1ab72a4.png"},
     {name: "Mondial", logo: "/lovable-uploads/3a6547b8-fad1-4f4e-bb7f-66ed666e5170.png"},
     {name: "Acqtec", logo: "/lovable-uploads/72a94254-5899-4852-96a6-49c5297ac1d6.png"},
-    {name: "Junkers", logo: "/lovable-uploads/e88748bf-8f26-431b-a591-1b87b072afeb.png"},
+    {name: "Junkers", logo: "/lovable-uploads/9d70410d-d862-4d3c-ae58-2ee0603cf7c1.png"},
     {name: "Jacuzzi", logo: "/lovable-uploads/a0ae8602-1e07-4a6e-8fb8-872a4dbdf928.png"},
     {name: "Fujinox", logo: "/lovable-uploads/cfb5934a-baf7-44c7-bd6a-a61c23ec5317.png"},
     {name: "Cardal", logo: "/lovable-uploads/dc4920ce-76a9-4575-83f0-99222ec21ddd.png"},
@@ -93,7 +93,7 @@ const Services = () => {
         <div className="text-center mb-16">
           <h2 className="section-title uppercase">NOSSOS SERVIÇOS</h2>
           <p className="section-subtitle">
-            Oferecemos soluções completas para manutenção e reparo de aquecedores a gás
+            Oferecemos soluções completas para manutenção e reparo de sistemas de aquecedores: gás, elétrico, solar, piscina, entre outros
           </p>
         </div>
 
