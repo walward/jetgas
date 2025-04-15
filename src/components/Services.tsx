@@ -58,28 +58,27 @@ const Services = () => {
     },
   ];
   
-  // Dados das marcas de aquecedores com novos logos
+  // Dados das marcas de aquecedores com os novos logos
   const brands = [
-    {name: "Rinnai", logo: "/lovable-uploads/d7331609-baf6-440e-a3f8-a8f14d090e1c.png"},
-    {name: "Bosch", logo: "/lovable-uploads/05fa389d-b4b3-47f6-9e1b-31ce242a20c2.png"},
-    {name: "Komeco", logo: "/lovable-uploads/79a8b4b7-ed6f-4413-8aa1-1e9506b1219f.png"},
-    {name: "Lorenzetti", logo: "/lovable-uploads/eabbf1e4-1ab5-4a2c-8870-b4734dbddfe2.png"},
-    {name: "Orbis", logo: "/lovable-uploads/fbdc53ae-6c82-42f9-88ac-9bdcab958ec9.png"},
-    {name: "Rheem", logo: "/lovable-uploads/cee91c7c-5e0c-4c5c-b940-82c3181ca8af.png"},
-    {name: "Cumulus", logo: "/lovable-uploads/8dc6066c-d082-48d5-aa5d-4896bd451377.png"},
-    {name: "Inova", logo: "/lovable-uploads/a1c5ec1c-f171-45b1-b25f-0918a1ab72a4.png"},
-    {name: "Mondial", logo: "/lovable-uploads/3a6547b8-fad1-4f4e-bb7f-66ed666e5170.png"},
-    {name: "Acqtec", logo: "/lovable-uploads/72a94254-5899-4852-96a6-49c5297ac1d6.png"},
-    {name: "Junkers", logo: "/lovable-uploads/9d70410d-d862-4d3c-ae58-2ee0603cf7c1.png"},
-    {name: "Jacuzzi", logo: "/lovable-uploads/a0ae8602-1e07-4a6e-8fb8-872a4dbdf928.png"},
-    {name: "Fujinox", logo: "/lovable-uploads/cfb5934a-baf7-44c7-bd6a-a61c23ec5317.png"},
-    {name: "Cardal", logo: "/lovable-uploads/dc4920ce-76a9-4575-83f0-99222ec21ddd.png"},
-    {name: "Fame", logo: "/lovable-uploads/1ab11a58-3da9-4d40-9bba-67de7670d75c.png"},
-    {name: "Corona", logo: "/lovable-uploads/0a90c52f-cdc2-4875-b04a-18ba3eb9221f.png"},
-    {name: "AquaHot", logo: "/lovable-uploads/a7f517dc-9965-4100-b19f-17635db50adb.png"},
-    {name: "Cod", logo: "/lovable-uploads/5965c3ba-7287-484f-a13d-e11c02bee785.png"},
-    {name: "Cad", logo: "/lovable-uploads/c6c5cb1e-8a21-4a83-b15e-436a8e38b8c6.png"},
-    {name: "Yume", logo: "/lovable-uploads/c03ffcdb-57d8-41a5-bf5a-5314a4984fcf.png"}
+    {name: "Bosch", logo: "/lovable-uploads/92a4e8f5-f20a-4741-8dc2-d3593bef72d5.png"},
+    {name: "Kent Aquecedores", logo: "/lovable-uploads/f96be191-abe0-49e7-bb5a-eee6b46b47cb.png"},
+    {name: "Cosmopolita", logo: "/lovable-uploads/b4186465-cf27-46a4-b5bc-5763b559d4c0.png"},
+    {name: "Cumulus", logo: "/lovable-uploads/867d4b55-bf9b-45ce-bd79-6d89e2a2585e.png"},
+    {name: "Equibrás", logo: "/lovable-uploads/7b026058-8751-4537-9edf-dc3e5dd413e3.png"},
+    {name: "General Heater", logo: "/lovable-uploads/06c9eea8-b9c4-45a7-bfc0-98f434e0b294.png"},
+    {name: "Hydratec", logo: "/lovable-uploads/60159a83-1cf5-4271-9d0a-1bb789c80727.png"},
+    {name: "Heliotek", logo: "/lovable-uploads/9279c7d9-7b6c-48a9-a2f1-8207d23613f6.png"},
+    {name: "Inova", logo: "/lovable-uploads/ad3c2f54-751c-42c1-9646-40567ac372b5.png"},
+    {name: "Junkers", logo: "/lovable-uploads/9b35d246-931d-4c15-b664-3822b075ba67.png"},
+    {name: "Komeco", logo: "/lovable-uploads/96a6fe5a-2dd5-40c3-ab3b-f55a679c38c9.png"},
+    {name: "Lorenzetti", logo: "/lovable-uploads/b8f9b544-10f8-4ea4-9243-806ca608c4fd.png"},
+    {name: "Nordik", logo: "/lovable-uploads/2a6964da-2e70-41e0-a44a-d60f7303e027.png"},
+    {name: "Orbis", logo: "/lovable-uploads/7db72933-76d7-430e-a543-5b408ebb14d6.png"},
+    {name: "Rheem", logo: "/lovable-uploads/85ebdb68-df59-44ff-ad38-e9db4fb8ab07.png"},
+    {name: "Rinnai", logo: "/lovable-uploads/d7f17110-d452-4fe4-a33e-daa6590b5d86.png"},
+    {name: "Sakuratec", logo: "/lovable-uploads/e6adb175-8f02-4108-9b1f-8c1eb3f7478f.png"},
+    {name: "Thermotini", logo: "/lovable-uploads/0adb630f-09f2-45da-9622-d76ebef2774b.png"},
+    {name: "Yume", logo: "/lovable-uploads/55efb327-b585-4eae-8f4a-5a7e0858738d.png"},
   ];
 
   // Plugin para autoplay do carrossel com delay de 2 segundos (mais rápido)

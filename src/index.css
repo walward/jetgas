@@ -151,11 +151,11 @@
   /* Increase WhatsApp button size on mobile */
   @media (max-width: 768px) {
     .btn-whatsapp {
-      @apply p-5 text-xl;
+      @apply p-6 text-2xl;
     }
     
     .btn-whatsapp svg {
-      @apply w-7 h-7;
+      @apply w-8 h-8;
     }
   }
   
