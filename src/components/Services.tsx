@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Flame, Wrench, ShieldCheck, Settings, Fan, ThermometerSnowflake } from "lucide-react";
 import { 
@@ -201,7 +200,7 @@ const Services = () => {
                     <img
                       src={brand.logo}
                       alt={`Logo ${brand.name}`}
-                      className="h-16 w-auto object-contain max-w-full grayscale hover:grayscale-0 transition-all mx-auto"
+                      className="h-24 w-auto object-contain max-w-full grayscale hover:grayscale-0 transition-all mx-auto"
                       loading="lazy"
                     />
                   </CarouselItem>
