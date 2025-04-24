@@ -10,10 +10,14 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import TextOverride from "@/components/TextOverride";
+import { trackPageView } from "@/utils/gtm";
 
 const Index = () => {
   // Update touch handling and viewport settings for mobile
   useEffect(() => {
+    // Track page view when component mounts
+    trackPageView('/', 'JetGas - Página Inicial');
+    
     // Set viewport meta tag for proper iOS display
     const viewportMeta = document.querySelector('meta[name="viewport"]');
     if (viewportMeta) {

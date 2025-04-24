@@ -1,6 +1,8 @@
+
 import React from "react";
 import { Facebook, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
+import { trackLinkClick } from "@/utils/gtm";
 
 const Footer = () => {
   return (
@@ -24,6 +26,9 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
+                onClick={() => trackLinkClick('Facebook', 'https://www.facebook.com/jetgas.aquecedores.2025', 'footer')}
+                data-gtm-element="social_link"
+                data-gtm-network="facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
@@ -32,6 +37,9 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
+                onClick={() => trackLinkClick('Instagram', 'https://www.instagram.com/jetgasaquecedores', 'footer')}
+                data-gtm-element="social_link"
+                data-gtm-network="instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -45,6 +53,8 @@ const Footer = () => {
                 <a
                   href="#inicio"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
+                  onClick={() => trackLinkClick('Início', '#inicio', 'footer_navigation')}
+                  data-gtm-element="nav_link"
                 >
                   <span className="mr-2">→</span>
                   Início
@@ -54,6 +64,8 @@ const Footer = () => {
                 <a
                   href="#servicos"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
+                  onClick={() => trackLinkClick('Serviços', '#servicos', 'footer_navigation')}
+                  data-gtm-element="nav_link"
                 >
                   <span className="mr-2">→</span>
                   Serviços
@@ -63,6 +75,8 @@ const Footer = () => {
                 <a
                   href="#sobre"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
+                  onClick={() => trackLinkClick('Sobre Nós', '#sobre', 'footer_navigation')}
+                  data-gtm-element="nav_link"
                 >
                   <span className="mr-2">→</span>
                   Sobre Nós
@@ -72,6 +86,8 @@ const Footer = () => {
                 <a
                   href="#depoimentos"
                   className="text-white/80 hover:text-white transition-colors flex items-center"
+                  onClick={() => trackLinkClick('Depoimentos', '#depoimentos', 'footer_navigation')}
+                  data-gtm-element="nav_link"
                 >
                   <span className="mr-2">→</span>
                   Depoimentos
@@ -170,7 +186,12 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0">
-            <Link to="/politica-de-privacidade" className="text-white/80 hover:text-white transition-colors">
+            <Link 
+              to="/politica-de-privacidade" 
+              className="text-white/80 hover:text-white transition-colors"
+              onClick={() => trackLinkClick('Política de Privacidade', '/politica-de-privacidade', 'footer')}
+              data-gtm-element="privacy_link"
+            >
               Política de Privacidade
             </Link>
           </div>

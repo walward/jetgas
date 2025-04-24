@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { AlertCircle, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { trackButtonClick, trackFormSubmit } from "@/utils/gtm";
 
 const CTA = () => {
   const { toast } = useToast();
@@ -24,6 +25,12 @@ const CTA = () => {
     
     // Encode the message for URL
     const encodedMessage = encodeURIComponent(message);
+    
+    // Track form submission in GTM
+    trackFormSubmit('emergencial_form', {
+      contains_phone: formData.telefone.length > 0,
+      contains_problem: formData.problema.length > 0
+    });
     
     // Open WhatsApp with the pre-filled message
     window.open(`https://wa.me/5511978025373?text=${encodedMessage}`, "_blank");
@@ -113,6 +120,7 @@ const CTA = () => {
                 <button
                   type="submit"
                   className="btn-primary bg-secondary hover:bg-secondary-light w-full flex items-center justify-center gap-2"
+                  onClick={() => trackButtonClick('solicitar_atendimento', 'form_emergencial')}
                 >
                   <span>Solicitar Atendimento Urgente</span>
                   <ArrowRight className="h-5 w-5" />

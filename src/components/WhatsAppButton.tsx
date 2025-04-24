@@ -1,9 +1,14 @@
 
 import React from "react";
+import { trackButtonClick } from "@/utils/gtm";
 
 const WhatsAppButton = () => {
   const defaultMessage = "Olá, gostaria de solicitar um orçamento. Pode me ajudar?";
   const encodedMessage = encodeURIComponent(defaultMessage);
+
+  const handleWhatsAppClick = () => {
+    trackButtonClick('whatsapp_flutuante', 'fixo_na_tela');
+  };
 
   return (
     <a
@@ -12,6 +17,8 @@ const WhatsAppButton = () => {
       rel="noopener noreferrer"
       className="btn-whatsapp"
       aria-label="Contato via WhatsApp"
+      onClick={handleWhatsAppClick}
+      data-gtm-element="whatsapp_button"
     >
       <svg
         className="h-6 w-6"
