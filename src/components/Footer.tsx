@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Facebook, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -22,11 +21,11 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://www.facebook.com/jetgas.aquecedores.2025"
+                href="https://www.facebook.com/profile.php?id=100063630023389"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
-                onClick={() => trackLinkClick('Facebook', 'https://www.facebook.com/jetgas.aquecedores.2025', 'footer')}
+                onClick={() => trackLinkClick('Facebook', 'https://www.facebook.com/profile.php?id=100063630023389', 'footer')}
                 data-gtm-element="social_link"
                 data-gtm-network="facebook"
               >
