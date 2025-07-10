@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Star, Quote } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -45,7 +44,7 @@ const Testimonials = () => {
   ];
 
   const averageRating = 4.8;
-  const totalReviews = 124;
+  const totalReviews = 155;
 
   const renderStars = (rating: number) => {
     return Array(5)
