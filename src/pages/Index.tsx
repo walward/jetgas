@@ -19,9 +19,18 @@ const Index = () => {
       const hash = window.location.hash;
       if (hash) {
         setTimeout(() => {
-          const element = document.querySelector(hash);
+          // Decode the hash to handle special characters like "ç"
+          const decodedHash = decodeURIComponent(hash);
+          const element = document.querySelector(decodedHash);
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            const headerOffset = 80; // Fixed header height
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
           }
         }, 150);
       }
