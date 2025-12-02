@@ -35,8 +35,9 @@ const Areas = () => {
   ];
 
   return (
-    <section id="areas-de-atendimento" className="section-padding bg-accent">
-      <div className="container mx-auto iphone-safe-container">
+    <section className="section-padding bg-accent">
+      <div className="container mx-auto iphone-safe-container relative">
+        <span id="areas-de-atendimento" className="absolute -top-24 md:-top-28" />
         <div className="text-center mb-16">
           <h2 className="section-title uppercase">ÁREAS DE ATENDIMENTO</h2>
           <p className="section-subtitle">
