@@ -13,6 +13,28 @@ import TextOverride from "@/components/TextOverride";
 import { trackPageView } from "@/utils/gtm";
 
 const Index = () => {
+  // Handle anchor scroll when page loads with hash
+  useEffect(() => {
+    const handleHashScroll = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        setTimeout(() => {
+          const element = document.querySelector(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 150);
+      }
+    };
+
+    handleHashScroll();
+    window.addEventListener('hashchange', handleHashScroll);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashScroll);
+    };
+  }, []);
+
   // Update touch handling and viewport settings for mobile
   useEffect(() => {
     // Track page view when component mounts

@@ -45,7 +45,7 @@ const CTA = () => {
   };
 
   return (
-    <section id="atendimento" className="section-padding bg-secondary">
+    <section id="atendimento-emergencial" className="section-padding bg-secondary">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <div className="md:w-1/2 mb-8 md:mb-0">
