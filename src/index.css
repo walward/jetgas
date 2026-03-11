@@ -99,17 +99,20 @@
   
   html {
     overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
     position: relative;
+    touch-action: auto;
     -webkit-overflow-scrolling: touch;
     -webkit-text-size-adjust: 100%;
   }
   
   body {
     overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
     position: relative;
-    overscroll-behavior: none;
+    touch-action: auto;
     -webkit-text-size-adjust: 100%;
     padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) 
              env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
@@ -119,6 +122,7 @@
     html, body {
       touch-action: pan-y;
       -ms-touch-action: pan-y;
+      overscroll-behavior: none;
     }
   }
   

@@ -44,55 +44,34 @@ const Index = () => {
     };
   }, []);
 
-  // Update touch handling and viewport settings for mobile
   useEffect(() => {
-    // Track page view when component mounts
     trackPageView('/', 'JetGas - Página Inicial');
-    
-    // Set viewport meta tag for proper iOS display
-    const viewportMeta = document.querySelector('meta[name="viewport"]');
-    if (viewportMeta) {
-      viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0');
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'viewport';
-      meta.content = 'width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0';
-      document.getElementsByTagName('head')[0].appendChild(meta);
+
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+      const viewportMeta = document.querySelector('meta[name="viewport"]');
+      if (viewportMeta) {
+        viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0');
+      }
+
+      document.body.style.overflowX = "hidden";
+      document.documentElement.style.overflowX = "hidden";
+      document.body.style.width = "100%";
+      document.documentElement.style.width = "100%";
+      document.body.style.position = "relative";
+      document.documentElement.style.position = "relative";
     }
-    
-    // Add viewport-fit meta tag for iOS notches
-    if (!document.querySelector('meta[name="viewport-fit"]')) {
-      const viewportFitMeta = document.createElement('meta');
-      viewportFitMeta.name = 'viewport-fit';
-      viewportFitMeta.content = 'cover';
-      document.getElementsByTagName('head')[0].appendChild(viewportFitMeta);
-    }
-    
-    // Update overflow styles to prevent horizontal scrolling
-    document.body.style.overflowX = "hidden";
-    document.documentElement.style.overflowX = "hidden";
-    document.body.style.width = "100%";
-    document.documentElement.style.width = "100%";
-    document.body.style.position = "relative";
-    document.documentElement.style.position = "relative";
-    
-    // Force a layout recalculation after a slight delay to fix any iOS rendering issues
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-      document.body.style.display = "none";
-      // This forces a layout recalculation
-      void document.body.offsetHeight;
-      document.body.style.display = "";
-    }, 50);
-    
+
     return () => {
-      // Reset styles when component unmounts
-      document.body.style.overflowX = "";
-      document.documentElement.style.overflowX = "";
-      document.body.style.width = "";
-      document.documentElement.style.width = "";
-      document.body.style.position = "";
-      document.documentElement.style.position = "";
+      if (isMobile) {
+        document.body.style.overflowX = "";
+        document.documentElement.style.overflowX = "";
+        document.body.style.width = "";
+        document.documentElement.style.width = "";
+        document.body.style.position = "";
+        document.documentElement.style.position = "";
+      }
     };
   }, []);
 
